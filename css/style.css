@@ -1,156 +1,466 @@
-/* style.css - Theme based on the 'Care Filled Support' logo */
+/* Custom CSS theme based on Care-Filled Support For Meg logo */
+/* Create this as assets/css/style.scss in your GitHub Pages repository */
 
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lato:wght@400;700&display=swap');
+---
+---
 
-/* Define color palette using CSS variables */
+@import "{{ site.theme }}";
+
+/* Color scheme derived from logo */
 :root {
-  --background-color: #FFF0F5; /* LavenderBlush - light pink background */
-  --primary-color: #DC143C;    /* Crimson - red heart color */
-  --secondary-color: #FF69B4; /* HotPink - pink heart color */
-  --text-color: #333333;       /* Dark grey for body text - slightly softer than pure black */
-  --heading-color: #000000;   /* Black for headings and accents */
-  --border-radius: 8px;       /* Soft rounded corners */
-  --heading-font: 'Dancing Script', cursive; /* Cursive font like the logo */
-  --body-font: 'Lato', sans-serif;          /* Clean sans-serif for readability */
+  --primary-red: #d13c3c;      /* Deep red from the heart */
+  --primary-pink: #f19cb7;     /* Pink from the second heart */
+  --accent-black: #231f20;     /* Black from the text and outline */
+  --background-color: #faf9fa; /* Very light background similar to logo background */
+  --text-color: #231f20;       /* Dark text color */
+  --link-color: #d13c3c;       /* Red for links */
+  --section-color: #f8f4f5;    /* Very light pink background for sections */
+  --border-color: #e6e6e6;     /* Light gray for borders */
 }
 
-/* Basic reset and body styling */
+/* Base styles */
 body {
-  margin: 0;
-  padding: 20px; /* Add some padding around the content */
-  font-family: var(--body-font);
-  background-color: var(--background-color);
+  font-family: "Libre Baskerville", Georgia, serif;  /* Elegant serif font similar to logo script */
   color: var(--text-color);
-  line-height: 1.6;
-  display: flex; /* Use flexbox for centering */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  min-height: 100vh; /* Ensure body takes full viewport height */
+  background-color: var(--background-color);
+  line-height: 1.8;
 }
 
-/* Container for content */
-.container {
-  background-color: #ffffff; /* White background for content area */
-  padding: 30px;
-  border-radius: var(--border-radius);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  max-width: 800px; /* Limit content width */
-  width: 90%; /* Responsive width */
-  text-align: center; /* Center text within the container */
-}
-
-/* Heading styles */
-h1, h2, h3 {
-  font-family: var(--heading-font);
-  color: var(--heading-color);
-  margin-bottom: 0.8em;
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display", "Times New Roman", serif;  /* Elegant serif for headings */
+  color: var(--primary-red);
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
 }
 
 h1 {
-  font-size: 3em; /* Larger size for main heading */
-  color: var(--primary-color); /* Use primary red for main heading */
+  font-size: 2.5em;
+  border-bottom: none;
+  text-align: center;
+  margin-bottom: 1em;
 }
 
 h2 {
-  font-size: 2.2em;
-  color: var(--secondary-color); /* Use secondary pink for subheadings */
-}
-
-h3 {
   font-size: 1.8em;
+  border-bottom: 2px solid var(--primary-pink);
+  padding-bottom: 0.3em;
+  width: fit-content;
 }
 
-/* Paragraph styles */
-p {
-  margin-bottom: 1em;
-  color: var(--text-color);
-}
-
-/* Link styles */
+/* Links */
 a {
-  color: var(--primary-color); /* Red links */
+  color: var(--link-color);
   text-decoration: none;
   transition: color 0.3s ease;
+  
+  &:hover {
+    color: var(--primary-pink);
+    text-decoration: underline;
+  }
 }
 
-a:hover, a:focus {
-  color: var(--secondary-color); /* Pink hover effect */
-  text-decoration: underline;
+/* Layout and containers */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-/* Button styles */
-button, .button {
-  display: inline-block;
-  font-family: var(--body-font); /* Use body font for buttons */
-  font-size: 1em;
-  font-weight: bold;
-  color: #ffffff; /* White text */
-  background-color: var(--primary-color); /* Red background */
-  border: none;
-  padding: 12px 25px;
-  border-radius: var(--border-radius);
-  cursor: pointer;
+section {
+  background-color: white;
+  border-radius: 12px;
+  padding: 30px;
+  margin: 30px 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Header with logo */
+header {
   text-align: center;
+  padding: 30px 0;
+  
+  img.logo {
+    max-width: 250px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .header-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    
+    a {
+      padding: 10px 15px;
+      border-radius: 25px;
+      background-color: white;
+      border: 2px solid var(--primary-red);
+      color: var(--primary-red);
+      font-weight: bold;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        background-color: var(--primary-red);
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+/* Navigation */
+nav {
+  background-color: white;
+  border-bottom: 1px solid var(--border-color);
+  padding: 15px 0;
+  margin-bottom: 30px;
+  text-align: center;
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+    li {
+      margin: 0 15px;
+      
+      a {
+        padding: 8px 0;
+        display: inline-block;
+        position: relative;
+        font-weight: 500;
+        
+        &:after {
+          content: '';
+          position: absolute;
+          width: 0;
+          height: 2px;
+          bottom: 0;
+          left: 0;
+          background-color: var(--primary-pink);
+          transition: width 0.3s ease;
+        }
+        
+        &:hover:after, &.active:after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+/* Team member cards */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 30px;
+  margin: 30px 0;
+}
+
+.team-member {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 3px solid var(--primary-pink);
+  }
+  
+  .team-info {
+    padding: 20px;
+    text-align: center;
+    
+    h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: var(--primary-red);
+    }
+    
+    p {
+      margin: 0;
+      color: var(--text-color);
+    }
+  }
+}
+
+/* Gallery styling */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+  margin: 30px 0;
+}
+
+.gallery-item {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+  
+  .caption {
+    padding: 15px;
+    background-color: white;
+    border-top: 3px solid var(--primary-pink);
+    
+    p {
+      margin: 0;
+      text-align: center;
+      font-style: italic;
+    }
+  }
+}
+
+/* Buttons */
+.button {
+  display: inline-block;
+  background-color: var(--primary-red);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 30px;
   text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  margin: 10px 5px; /* Add margin around buttons */
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border: 2px solid var(--primary-red);
+  margin-top: 20px;
+  
+  &:hover {
+    background-color: white;
+    color: var(--primary-red);
+    text-decoration: none;
+  }
+  
+  &.secondary {
+    background-color: var(--primary-pink);
+    border-color: var(--primary-pink);
+    
+    &:hover {
+      background-color: white;
+      color: var(--primary-pink);
+    }
+  }
 }
 
-button:hover, .button:hover {
-  background-color: var(--secondary-color); /* Pink hover background */
-  transform: translateY(-2px); /* Slight lift effect */
+/* Contact form styling */
+form {
+  max-width: 600px;
+  margin: 30px auto;
+  
+  .form-group {
+    margin-bottom: 25px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--primary-red);
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    
+    &:focus {
+      border-color: var(--primary-pink);
+      outline: none;
+    }
+  }
+  
+  textarea {
+    resize: vertical;
+    min-height: 150px;
+  }
+  
+  button[type="submit"] {
+    background-color: var(--primary-red);
+    color: white;
+    border: 2px solid var(--primary-red);
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background-color: white;
+      color: var(--primary-red);
+    }
+  }
 }
 
-/* Secondary button style */
-.button-secondary {
-  background-color: var(--secondary-color); /* Pink background */
+/* Footer */
+footer {
+  background-color: white;
+  padding: 40px 0;
+  margin-top: 50px;
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+  
+  .social-links {
+    margin: 20px 0;
+    
+    a {
+      display: inline-block;
+      margin: 0 10px;
+      color: var(--primary-red);
+      font-size: 1.5em;
+      transition: color 0.3s ease;
+      
+      &:hover {
+        color: var(--primary-pink);
+      }
+    }
+  }
+  
+  .copyright {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #777;
+  }
 }
 
-.button-secondary:hover {
-  background-color: var(--primary-color); /* Red hover background */
+/* Hero section for homepage */
+.hero {
+  text-align: center;
+  padding: 60px 0;
+  background-color: white;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  
+  img {
+    max-width: 300px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border: 3px solid var(--primary-pink);
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto 30px;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
 }
 
-/* Simple HR style */
-hr {
-  border: 0;
-  height: 1px;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), var(--secondary-color), rgba(0, 0, 0, 0));
-  margin: 2em 0;
+/* Mission statement highlight */
+.mission-statement {
+  background-color: var(--section-color);
+  border-left: 5px solid var(--primary-red);
+  padding: 25px;
+  margin: 30px 0;
+  font-style: italic;
+  font-size: 1.1em;
+  line-height: 1.8;
+  
+  p {
+    margin: 0;
+  }
 }
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Theme Demo</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Care Filled Support</h1>
 
-        <h2>Supporting You Always</h2>
+/* Feature boxes for homepage */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 30px;
+  margin: 40px 0;
+  
+  .feature-box {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-5px);
+    }
+    
+    i {
+      font-size: 2.5em;
+      color: var(--primary-red);
+      margin-bottom: 20px;
+    }
+    
+    h3 {
+      margin-top: 0;
+    }
+    
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
 
-        <p>
-            This is a demonstration of the CSS theme inspired by the logo.
-            The colors and fonts reflect the soft and caring nature of the design.
-            Notice the <a href="#">link style</a> and how it changes on hover.
-        </p>
-
-        <hr>
-
-        <h3>Get Involved</h3>
-        <p>
-            Learn more about how you can contribute or receive support.
-        </p>
-
-        <div>
-            <button>Primary Action</button>
-            <button class="button-secondary">Secondary Action</button>
-            <a href="#" class="button">Learn More</a>
-        </div>
-    </div>
-</body>
-</html>
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2em;
+  }
+  
+  h2 {
+    font-size: 1.5em;
+  }
+  
+  .hero {
+    padding: 40px 20px;
+  }
+  
+  .team-grid,
+  .gallery,
+  .features {
+    grid-template-columns: 1fr;
+  }
+  
+  nav ul {
+    flex-direction: column;
+    
+    li {
+      margin: 5px 0;
+    }
+  }
+}
