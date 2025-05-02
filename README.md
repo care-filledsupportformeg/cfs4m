@@ -1,7 +1,8 @@
-# carefilledsupportformeg
-Care-filled Support for Meg
+# Care-Filled Support for Meg
 
-**A family-run caregiving team in Orange County, California, dedicated to supporting Meagan-a vibrant woman with cerebral palsy who inspires compassion and joy.**
+A family-run caregiving team in Orange County, California, dedicated to supporting Meagan-a vibrant woman with cerebral palsy who inspires compassion and joy.
+
+---
 
 ## Table of Contents
 
@@ -20,18 +21,18 @@ Care-filled Support for Meg
 
 ## About
 
-This repository contains the source code for the official [Care-Filled Support for Meg](https://carefilledsupportformeg.com) website. Our mission is to create a welcoming space for caregivers, families, and advocates-sharing our journey, building community, and empowering others to provide care filled with respect, dignity, and heart.
+This repository contains the source code for the official Care-Filled Support for Meg website. Our mission is to create a welcoming space for caregivers, families, and advocates-sharing our journey, building community, and empowering others to provide care filled with respect, dignity, and heart.
 
 ## Features
 
-- **Responsive Design:** Works on desktop, tablet, and mobile.
-- **Meet the Team:** Learn about Meagan and her dedicated caregivers.
-- **Services Overview:** Detailed descriptions of care services offered.
-- **Join Our Team:** Information and application process for new caregivers.
-- **Contact Form:** Easy way to reach out or apply.
-- **Social Media Integration:** Quick links to all major platforms.
-- **SEO Optimized:** Meta tags, sitemap, and robots.txt included.
-- **Accessible:** Follows best practices for accessibility.
+- Responsive design for all devices
+- Meet the Team: Learn about Meagan and her caregivers
+- Services overview
+- Join Our Team: Application and info
+- Contact form
+- Social media integration
+- SEO optimized (meta tags, sitemap, robots.txt)
+- Accessibility best practices
 
 ## Project Structure
 
@@ -44,8 +45,18 @@ carefilledsupport/
 │ └── script.js
 ├── images/
 │ ├── logo/
+│ │ ├── favicon.png
+│ │ ├── logo.png
+│ │ └── logo2.png
 │ ├── team/
+│ │ ├── team1.jpg # Nancy
+│ │ ├── team2.jpg # Charmaine
+│ │ ├── team3.png # Elaine
+│ │ └── team4.jpg # Dee
 │ └── meagan/
+│ ├── meagan1.jpg
+│ ├── meagan2.jpg
+│ └── meagan3.jpg
 ├── index.html
 ├── about.html
 ├── services.html
@@ -56,24 +67,21 @@ carefilledsupport/
 ├── .htaccess
 └── README.md
 
-
 ## Screenshots
 
-![Homepage Screenshot](images/screenshots/homepage.png)
-![Meet the Team Screenshot](images/screenshots/team.png)
-
-*(Replace with your actual screenshots)*
+![Homepage Screenshot](images/meagan/meagan1.jpg)
+![Meet the Team Screenshot](images/team/team3.png)
 
 ## Getting Started
 
 1. **Clone the repository:**
     ```
-    git clone https://github.com/care-filledsupportformeg/carefilledsupport.git
+    git clone https://github.com/yourusername/carefilledsupport.git
     cd carefilledsupport
     ```
 
 2. **Add your images:**
-   - Place your logo in `images/logo/`
+   - Place your logo files in `images/logo/`
    - Add team photos to `images/team/`
    - Add Meagan’s photos to `images/meagan/`
 
@@ -126,4 +134,3 @@ This project is licensed under the MIT License.
 ---
 
 *Thank you for supporting Care-Filled Support for Meg!*
-
