@@ -1,298 +1,207 @@
-/* Care Filled Support For Meg - Main CSS File */
-/* Based on the logo's soft, caring aesthetic with red and pink heart theme */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Care-Filled Support for Meg | Compassionate Caregiving in Orange County</title>
+    <meta name="description" content="A family-run caregiving team in Orange County, California, dedicated to supporting Meagan - a vibrant woman with cerebral palsy who inspires compassion and joy.">
+    <meta name="keywords" content="caregiving, cerebral palsy, Orange County, California, Self-Determination Program, support, caregivers">
+    <link rel="icon" href="images/logo/favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo/logo.png" alt="Care-Filled Support for Meg Logo" height="60">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Our Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="join.html">Join Our Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-:root {
-  /* Color palette derived from logo */
-  --primary-red: #cc3333;
-  --primary-pink: #f7a0b9;
-  --soft-pink: #ffedf2;
-  --dark-text: #333333;
-  --light-text: #ffffff;
-  --background: #faf6f7;
-  --accent-gray: #e6e6e6;
-}
+    <!-- Hero Section -->
+    <section class="hero-section position-relative">
+        <div class="hero-image">
+            <img src="images/meagan/meagan1.jpg" alt="Meagan's inspiring journey" class="img-fluid w-100">
+            <div class="overlay"></div>
+        </div>
+        <div class="container hero-content text-center">
+            <h1 class="display-4 fw-bold text-white">Care-Filled Support for Meg</h1>
+            <p class="lead text-white">A compassionate caregiving team dedicated to supporting Meagan's journey</p>
+            <div class="mt-4">
+                <a href="join.html" class="btn btn-primary btn-lg me-3">Join Our Team</a>
+                <a href="contact.html" class="btn btn-outline-light btn-lg">Contact Us</a>
+            </div>
+        </div>
+    </section>
 
-/* Base styles */
-body {
-  font-family: 'Montserrat', 'Open Sans', sans-serif;
-  background-color: var(--background);
-  color: var(--dark-text);
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-}
+    <!-- Mission Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2 class="mb-4">Our Mission</h2>
+                    <p class="lead">To create a welcoming space for caregivers, families, and advocates-sharing our journey, building community, and empowering others to provide care filled with respect, dignity, and heart.</p>
+                    <p>Through California's Self-Determination Program, our close-knit team provides personalized, loving care that centers Meagan's needs and celebrates her unique story.</p>
+                    <a href="about.html" class="btn btn-outline-primary mt-3">Learn More About Us</a>
+                </div>
+                <div class="col-md-6">
+                    <img src="images/meagan/meagan2.jpg" alt="Our compassionate caregiving mission" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
 
-/* Typography */
-h1, h2, h3, h4, h5 {
-  font-family: 'Playfair Display', 'Georgia', serif;
-  font-weight: 400;
-  margin-top: 0;
-}
+    <!-- Services Preview -->
+    <section class="bg-light py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2>How We Support Meagan</h2>
+                <p class="lead">Comprehensive care services tailored to Meagan's unique needs</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="rounded-circle bg-primary d-flex align-items-center justify-content-center mx-auto mb-4" style="width: 80px; height: 80px;">
+                                <i class="fas fa-hand-holding-heart text-white fa-2x"></i>
+                            </div>
+                            <h3 class="card-title h5">Personal Care</h3>
+                            <p class="card-text">Providing dignified assistance with daily activities, hygiene, and mobility.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="rounded-circle bg-primary d-flex align-items-center justify-content-center mx-auto mb-4" style="width: 80px; height: 80px;">
+                                <i class="fas fa-users text-white fa-2x"></i>
+                            </div>
+                            <h3 class="card-title h5">Social Engagement</h3>
+                            <p class="card-text">Creating opportunities for meaningful social interactions and community participation.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="rounded-circle bg-primary d-flex align-items-center justify-content-center mx-auto mb-4" style="width: 80px; height: 80px;">
+                                <i class="fas fa-heartbeat text-white fa-2x"></i>
+                            </div>
+                            <h3 class="card-title h5">Health Management</h3>
+                            <p class="card-text">Supporting medical appointments, medication management, and wellness activities.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="services.html" class="btn btn-primary">View All Services</a>
+            </div>
+        </div>
+    </section>
 
-h1 {
-  font-size: 2.5rem;
-  color: var(--primary-red);
-}
+    <!-- Join Our Team Preview -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 order-md-2">
+                    <h2 class="mb-4">Join Our Caregiving Team</h2>
+                    <p class="lead">We're seeking compassionate, qualified caregivers to support Meagan.</p>
+                    <p>As part of our team, you'll receive competitive pay, comprehensive training, and be part of a supportive family-centered approach to caregiving.</p>
+                    <a href="join.html" class="btn btn-primary mt-3">Learn About Opportunities</a>
+                </div>
+                <div class="col-md-6 order-md-1">
+                    <img src="images/team/team3.png" alt="Our dedicated caregiving team" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
 
-h2 {
-  font-size: 2rem;
-  color: var(--primary-red);
-}
+    <!-- Testimonials -->
+    <section class="bg-light py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2>What People Say</h2>
+                <p class="lead">Hear from those who've experienced our care</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="card border-0 shadow-sm">
+                                    <div class="card-body p-5 text-center">
+                                        <i class="fas fa-quote-left fa-3x text-primary mb-4"></i>
+                                        <p class="lead mb-4">"The team at Care-Filled Support for Meg has transformed Meagan's life with their dedication and genuine care. They treat her like family, and that makes all the difference."</p>
+                                        <div class="d-flex justify-content-center">
+                                            <div>
+                                                <h5 class="mb-1">Family Member</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Add more testimonials as needed -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-h3 {
-  font-size: 1.75rem;
-  color: var(--dark-text);
-}
-
-p {
-  margin-bottom: 1.2rem;
-}
-
-/* Logo styling */
-.logo {
-  max-width: 200px;
-  display: block;
-  margin: 0 auto;
-}
-
-/* Container styling */
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-/* Header styling */
-header {
-  text-align: center;
-  padding: 2rem 0;
-  background-color: var(--soft-pink);
-  border-bottom: 1px solid var(--primary-pink);
-}
-
-/* Navigation */
-nav {
-  background-color: var(--primary-red);
-  padding: 1rem 0;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  padding: 0;
-  margin: 0;
-}
-
-nav li {
-  margin: 0 1rem;
-}
-
-nav a {
-  color: var(--light-text);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: var(--soft-pink);
-}
-
-/* Button styling */
-.btn {
-  display: inline-block;
-  background-color: var(--primary-red);
-  color: var(--light-text);
-  padding: 0.8rem 1.5rem;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  border: none;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background-color: var(--primary-pink);
-  transform: translateY(-2px);
-}
-
-.btn-outline {
-  background-color: transparent;
-  border: 2px solid var(--primary-red);
-  color: var(--primary-red);
-}
-
-.btn-outline:hover {
-  background-color: var(--primary-red);
-  color: var(--light-text);
-}
-
-/* Card styling */
-.card {
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-  transition: transform 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card-title {
-  color: var(--primary-red);
-  border-bottom: 2px solid var(--primary-pink);
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-/* Footer styling */
-footer {
-  background-color: var(--primary-red);
-  color: var(--light-text);
-  text-align: center;
-  padding: 2rem 0;
-  margin-top: 3rem;
-}
-
-footer a {
-  color: var(--soft-pink);
-  text-decoration: none;
-}
-
-/* Circle container - mimicking the logo's circular design */
-.circle-container {
-  border: 1px solid var(--primary-pink);
-  border-radius: 50%;
-  padding: 3rem;
-  width: 300px;
-  height: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 2rem auto;
-  position: relative;
-}
-
-/* Heart icon styling */
-.heart-icon {
-  color: var(--primary-red);
-  font-size: 2rem;
-  margin: 0.5rem;
-}
-
-.heart-pink {
-  color: var(--primary-pink);
-}
-
-/* Section styling */
-.section {
-  padding: 3rem 0;
-}
-
-.section-pink {
-  background-color: var(--soft-pink);
-}
-
-/* Grid layout */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
-}
-
-/* Curved text (like in the logo) */
-.curved-text {
-  font-family: 'Dancing Script', cursive;
-  font-size: 1.5rem;
-  color: var(--primary-red);
-}
-
-/* Form styling */
-.form-group {
-  margin-bottom: 1.5rem;
-}
-
-.form-control {
-  width: 100%;
-  padding: 0.8rem;
-  border: 1px solid var(--accent-gray);
-  border-radius: 4px;
-  font-family: inherit;
-}
-
-.form-control:focus {
-  outline: none;
-  border-color: var(--primary-pink);
-  box-shadow: 0 0 0 2px rgba(247, 160, 185, 0.25);
-}
-
-/* Helper classes */
-.text-center {
-  text-align: center;
-}
-
-.text-red {
-  color: var(--primary-red);
-}
-
-.text-pink {
-  color: var(--primary-pink);
-}
-
-.bg-soft-pink {
-  background-color: var(--soft-pink);
-}
-
-.rounded {
-  border-radius: 8px;
-}
-
-.p-3 {
-  padding: 1.5rem;
-}
-
-.mb-3 {
-  margin-bottom: 1.5rem;
-}
-
-/* Media queries for responsiveness */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  nav li {
-    margin: 0.5rem 0;
-  }
-  
-  .circle-container {
-    width: 250px;
-    height: 250px;
-    padding: 2rem;
-  }
-}
-
-/* Animations */
-@keyframes heartbeat {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
-}
-
-.heartbeat {
-  animation: heartbeat 1.5s infinite;
-}
-
-/* Accessibility */
-:focus {
-  outline: 3px solid var(--primary-pink);
-  outline-offset: 2px;
-}
+    <!-- CTA Section -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="mb-4">Ready to Get Involved?</h2>
+            <p class="lead mb-4">Whether you're interested in joining our team or learning more about our services, we'd love to hear from you.</p>
+            <div>
+                <a href="contact.html" class="btn btn-light btn-lg me-3">Contact Us</a>
+                <a href="join.html" class="btn btn-outline-light btn-lg">Join Our Team</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Care-Filled Support for Meg</h5>
+                    <p>A family-run caregiving team in Orange County, dedicated to supporting Meagan through California's Self-Determination Program.</p>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Home</a></li>
+                        <li><a href="about.html" class="text-white">About Us</a></li>
+                        <li><a href="services.html" class="text-white">Our Services</a></li>
+                        <li><a href="join.html" class="text-white">Join Our Team</a></li>
+                        <li><a href="contact.html" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Connect With Us</h5>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/carefilledsupportformeg" class="text-white me-3" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+                        <a href="https://www.facebook.com/carefilledsupportformeg" class="text-white me-3" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+                        <a href="https://www.youtube.com/@carefilledsupportformeg" class="text-white me-3" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
+                        <a href="https://x.com/carefulsupports" class="text-white" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+                    </div>
+                    <div class="mt-3">
