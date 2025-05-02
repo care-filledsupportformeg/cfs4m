@@ -1,176 +1,175 @@
-/* ======================================== */
-/* Theme based on 'Care Filled Support' Logo */
-/* ======================================== */
+---
+---
 
-/* --- Root Variables --- */
+@import "{{ site.theme }}";
+
+/* Care-Filled Support Theme - Based on Logo */
+
 :root {
-  --background-soft-pink: #FFF8F9;
-  --heart-red: #C82432;
-  --heart-pink: #F989B0;
-  --text-black: #24292e; /* GitHub default dark grey */
-  --line-art-black: #333333;
-  --link-color: var(--heart-red);
-  --link-hover-color: var(--heart-pink);
-  --border-color: #eaeaea; /* Lighter border */
-  --button-text-color: #ffffff;
-
-  /* Consider web-safe fonts that evoke a similar feel or provide good contrast */
-  --font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"; /* Standard GitHub font stack */
-  --font-headings: 'Georgia', serif; /* A softer serif for headings */
+  --primary-red: #ba2e2b;
+  --primary-pink: #ed90ae;
+  --secondary-pink: #c0798a;
+  --background-light: #fdf2f8;
+  --text-dark: #333333;
+  --circle-outline: #000000;
 }
 
-/* --- Base Styles --- */
+/* Base Styles */
 body {
-  background-color: var(--background-soft-pink);
-  color: var(--text-black);
-  font-family: var(--font-primary);
+  background-color: var(--background-light);
+  font-family: 'Quicksand', 'Helvetica Neue', Arial, sans-serif;
+  color: var(--text-dark);
   line-height: 1.6;
-  margin: 0;
-  padding: 0; /* Remove default padding if applying to full page */
 }
 
-/* Apply padding to main content area if needed */
-.container { /* Example container */
-    max-width: 900px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #ffffff; /* White inner background for contrast */
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-
-/* --- Typography --- */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-headings);
-  color: var(--text-black);
-  margin-top: 1.8em;
-  margin-bottom: 0.6em;
-  line-height: 1.3;
+/* Typography */
+h1, h2, h3, h4, .site-title {
+  font-family: 'Dancing Script', cursive, 'Brush Script MT', cursive;
+  color: var(--primary-red);
+  letter-spacing: 0.03em;
 }
 
 h1 {
-  color: var(--heart-red); /* Use prominent red for main heading */
-  font-size: 2.2em;
-  border-bottom: 2px solid var(--border-color);
-  padding-bottom: 0.3em;
+  font-size: 2.5rem;
+  font-weight: 700;
 }
 
 h2 {
-  color: var(--heart-pink); /* Use pink for secondary headings */
-  font-size: 1.8em;
-  border-bottom: 1px solid var(--border-color);
-  padding-bottom: 0.2em;
+  color: var(--secondary-pink);
+  font-size: 2rem;
 }
 
 h3 {
-    font-size: 1.5em;
-    color: var(--line-art-black);
+  font-size: 1.5rem;
 }
 
-p {
-  margin-bottom: 1.2em;
+/* Header & Navigation */
+.site-header {
+  border-top: 5px solid var(--primary-red);
+  border-bottom: 1px solid rgba(237, 144, 174, 0.3);
+  background-color: var(--background-light);
 }
 
-a {
-  color: var(--link-color);
+.site-title, .site-title:visited, .site-title:hover {
+  color: var(--primary-red);
+}
+
+.site-nav .page-link {
+  color: var(--primary-pink);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.site-nav .page-link:hover {
+  color: var(--primary-red);
   text-decoration: none;
-  transition: color 0.2s ease-in-out;
 }
 
-a:hover,
-a:focus {
-  color: var(--link-hover-color);
-  text-decoration: underline;
+/* Links */
+a, a:visited {
+  color: var(--primary-pink);
+  transition: color 0.3s ease;
 }
 
-strong, b {
-    color: var(--line-art-black); /* Slightly darker emphasis */
+a:hover {
+  color: var(--primary-red);
+  text-decoration: none;
 }
 
-/* --- Links & Buttons --- */
-.btn,
-button {
+/* Buttons */
+.btn, button, input[type="submit"] {
+  background-color: var(--primary-pink);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 25px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.btn:hover, button:hover, input[type="submit"]:hover {
+  background-color: var(--primary-red);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(186, 46, 43, 0.2);
+}
+
+/* Cards and Sections */
+.card, .post, article, .page-content {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 2px 15px rgba(237, 144, 174, 0.15);
+  padding: 25px;
+  margin-bottom: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover, .post:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(237, 144, 174, 0.25);
+}
+
+/* Footer */
+.site-footer {
+  background-color: var(--background-light);
+  border-top: 1px solid rgba(237, 144, 174, 0.3);
+  padding: 30px 0;
+}
+
+/* Special Elements - Heart Icons */
+.heart-icon {
   display: inline-block;
-  padding: 10px 18px;
-  font-size: 1em;
-  font-weight: 600;
-  line-height: 1.5;
-  color: var(--button-text-color);
-  background-color: var(--heart-red);
-  border: 1px solid var(--heart-red);
-  border-radius: 6px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
 }
 
-.btn:hover,
-button:hover {
-  background-color: var(--heart-pink);
-  border-color: var(--heart-pink);
-  color: var(--text-black); /* Change text color for contrast on pink */
-  text-decoration: none;
+.heart-icon::before {
+  content: "♥";
+  position: absolute;
+  font-size: 20px;
 }
 
-/* Secondary button style */
-.btn-secondary {
-    background-color: transparent;
-    color: var(--heart-pink);
-    border: 1px solid var(--heart-pink);
+.heart-icon.red::before {
+  color: var(--primary-red);
 }
 
-.btn-secondary:hover {
-    background-color: var(--heart-pink);
-    color: var(--text-black);
-    border: 1px solid var(--heart-pink);
+.heart-icon.pink::before {
+  color: var(--primary-pink);
 }
 
-
-/* --- Other Elements --- */
-hr {
-  border: 0;
-  height: 1px;
-  background-color: var(--border-color);
-  margin: 2.5em 0;
+/* Circle with Hands - Header Logo Styling */
+.logo-container {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
 }
 
-code, pre {
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  background-color: #f6f8fa; /* GitHub's code background */
-  border: 1px solid var(--border-color);
-  border-radius: 3px;
-  padding: 0.2em 0.4em;
-  font-size: 85%; /* GitHub style */
+.logo-circle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--circle-outline);
+  border-radius: 50%;
 }
 
-pre {
-  padding: 16px;
-  overflow: auto;
-  line-height: 1.45;
+/* Media Queries */
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  .site-header {
+    padding: 10px 0;
+  }
+  
+  .card, .post, article, .page-content {
+    padding: 15px;
+  }
 }
-
-blockquote {
-  margin-left: 0;
-  padding-left: 1em;
-  border-left: 4px solid var(--heart-pink);
-  color: #586069; /* GitHub's muted text color */
-  font-style: italic;
-}
-
-/* --- Optional: Logo Placeholder --- */
-.logo-placeholder {
-    /* Style this if you want to display the logo */
-    display: block;
-    max-width: 200px; /* Adjust as needed */
-    margin: 0 auto 20px auto; /* Center it */
-}
-.logo-placeholder img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* ======================================== */
