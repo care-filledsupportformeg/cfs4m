@@ -1,147 +1,274 @@
+/* Care-Filled Support for Meg - CSS Theme
+   Based on logo colors with complementary yellow accent
+   Primary: #CE2D2D (red heart)
+   Secondary: #F795AD (pink heart)
+   Background: #FFF0F5 (light pink)
+   Accent: #FDDC5C (butter yellow)
+   Text: #333333 (dark gray)
+*/
+
 :root {
-    --primary-color: #CE2D2D; /* Logo red heart */
-    --secondary-color: #F795AD; /* Logo pink heart */
-    --background-color: #FFF0F5; /* Light pink */
-    --accent-color: #FDDC5C; /* Soft yellow accent */
-    --text-color: #333333;
-    --light-text: #736269;
-    --white: #fff;
-    --border-color: #EADCE0;
+    --primary-color: #CE2D2D; /* Red heart */
+    --secondary-color: #F795AD; /* Pink heart */
+    --background-color: #FFF0F5; /* Light pink background */
+    --accent-color: #FDDC5C; /* Complementary yellow */
+    --text-color: #333333; /* Dark text for readability */
+    --light-text: #736269; /* Softer text for secondary content */
+    --white: #ffffff;
+    --gray-light: #f8f9fa;
+    --border-color: #EADCE0; /* Soft border color */
 }
 
-/* Base */
+/* Base Styles */
 body {
     font-family: 'Nunito', 'Segoe UI', sans-serif;
     color: var(--text-color);
-    background-color: var(--background-color);
     line-height: 1.6;
+    background-color: var(--background-color);
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6, .display-4, .script-heading {
+h1, h2, h3, h4, h5, h6 {
     font-family: 'Dancing Script', cursive;
-    color: var(--primary-color);
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.display-4 {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
+    font-size: 3.5rem;
 }
 
 .lead {
-    color: var(--light-text);
     font-weight: 500;
+    color: var(--light-text);
 }
 
-/* Navbar */
-.navbar {
-    background: var(--white) !important;
-    box-shadow: 0 2px 10px rgba(206,45,45,0.07);
+/* Color Classes */
+.text-primary {
+    color: var(--primary-color) !important;
 }
+
+.text-secondary {
+    color: var(--secondary-color) !important;
+}
+
+.text-accent {
+    color: var(--accent-color) !important;
+}
+
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.bg-secondary {
+    background-color: var(--secondary-color) !important;
+}
+
+.bg-accent {
+    background-color: var(--accent-color) !important;
+}
+
+.bg-light {
+    background-color: var(--background-color) !important;
+}
+
+/* Navigation */
+.navbar {
+    background-color: var(--white) !important;
+    box-shadow: 0 2px 15px rgba(206, 45, 45, 0.1);
+}
+
 .navbar-brand img {
     max-height: 60px;
 }
+
 .nav-link {
     font-weight: 600;
     color: var(--text-color);
-    transition: color 0.3s;
+    transition: color 0.3s ease;
+    margin: 0 5px;
 }
-.nav-link:hover, .nav-link.active {
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+.nav-link.active {
     color: var(--primary-color) !important;
     border-bottom: 2px solid var(--primary-color);
 }
 
 /* Buttons */
 .btn-primary {
-    background: var(--primary-color);
+    background-color: var(--primary-color);
     border-color: var(--primary-color);
     color: var(--white);
 }
-.btn-primary:hover {
-    background: #B82626;
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: #B82626; /* Darkened red */
     border-color: #B82626;
 }
+
 .btn-secondary {
-    background: var(--secondary-color);
+    background-color: var(--secondary-color);
     border-color: var(--secondary-color);
     color: var(--white);
 }
-.btn-secondary:hover {
-    background: #E58199;
+
+.btn-secondary:hover, .btn-secondary:focus {
+    background-color: #E58199; /* Darkened pink */
     border-color: #E58199;
 }
-.btn-accent, .bg-accent {
-    background: var(--accent-color) !important;
-    color: var(--text-color) !important;
+
+.btn-accent {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--text-color);
 }
+
+.btn-accent:hover, .btn-accent:focus {
+    background-color: #EAC94A; /* Darkened yellow */
+    border-color: #EAC94A;
+}
+
 .btn-outline-primary {
     color: var(--primary-color);
     border-color: var(--primary-color);
 }
+
 .btn-outline-primary:hover {
-    background: var(--primary-color);
+    background-color: var(--primary-color);
     color: var(--white);
 }
+
 .btn-outline-light {
     color: var(--white);
     border-color: var(--white);
 }
+
 .btn-outline-light:hover {
     color: var(--primary-color);
-    background: var(--white);
+    background-color: var(--white);
 }
 
-/* Hero */
+/* Hero Section */
 .hero-section {
     position: relative;
     height: 80vh;
     min-height: 500px;
     max-height: 700px;
 }
+
 .hero-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+
 .overlay {
-    background: linear-gradient(rgba(206,45,45,0.7), rgba(247,149,173,0.7));
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(206, 45, 45, 0.7), rgba(247, 149, 173, 0.7)) !important;
 }
 
-/* Cards */
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 800px;
+}
+
+/* Cards & Sections */
 .card {
     border-radius: 15px;
+    overflow: hidden;
     border: 1px solid var(--border-color);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(206,45,45,0.1);
+    box-shadow: 0 10px 25px rgba(206, 45, 45, 0.1);
 }
+
 .card-title {
     color: var(--primary-color);
     font-weight: 700;
 }
+
+.shadow-sm {
+    box-shadow: 0 5px 15px rgba(206, 45, 45, 0.07) !important;
+}
+
 .rounded-circle.bg-primary {
-    background: var(--primary-color) !important;
+    background-color: var(--primary-color) !important;
+    border: 3px solid var(--white);
 }
-.rounded-circle.bg-secondary {
-    background: var(--secondary-color) !important;
-}
+
 .rounded-circle.bg-accent {
-    background: var(--accent-color) !important;
+    background-color: var(--accent-color) !important;
     color: var(--text-color);
 }
 
-/* Social Icons */
-.social-icons a {
-    transition: transform 0.3s, background 0.3s;
-    display: inline-block;
-    width: 40px; height: 40px; line-height: 40px;
-    text-align: center; border-radius: 50%;
-    background: rgba(255,255,255,0.1);
-    margin-right: 8px;
+/* Special sections */
+.py-5 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
 }
-.social-icons a:hover {
-    transform: translateY(-3px);
-    background: var(--accent-color);
-    color: var(--text-color) !important;
+
+.page-header {
+    background: linear-gradient(135deg, var(--background-color) 0%, var(--white) 100%);
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Team photos */
+.team-member img {
+    border: 3px solid var(--white);
+    box-shadow: 0 5px 15px rgba(206, 45, 45, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.team-member img:hover {
+    transform: scale(1.03);
+}
+
+/* Timeline for Application Process */
+.timeline {
+    position: relative;
+}
+
+.timeline:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    margin-left: -1px;
+    background-color: var(--secondary-color);
+}
+
+.inner-circle {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
+    border: 2px solid var(--white);
+}
+
+/* Testimonials */
+.fa-quote-left {
+    color: var(--secondary-color) !important;
+    opacity: 0.7;
+}
+
+/* Values section with yellow accents */
+.values-card {
+    border-left: 4px solid var(--accent-color);
+}
+
+.values-icon {
+    color: var(--accent-color);
 }
 
 /* Footer */
@@ -149,18 +276,85 @@ footer.bg-dark {
     background: linear-gradient(135deg, var(--text-color) 0%, #4A3E40 100%) !important;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .hero-section { height: 60vh; }
-    .display-4 { font-size: 2.5rem; }
+footer a {
+    transition: color 0.3s ease;
 }
 
-/* Forms */
-.form-control:focus, .form-select:focus {
-    border-color: var(--secondary-color);
-    box-shadow: 0 0 0 0.25rem rgba(247,149,173,0.25);
+footer a:hover {
+    color: var(--accent-color) !important; /* Yellow accent on hover */
+    text-decoration: none;
 }
+
+.social-icons a {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-right: 8px;
+}
+
+.social-icons a:hover {
+    transform: translateY(-3px);
+    background-color: var(--accent-color);
+    color: var(--text-color) !important;
+}
+
+/* Form Elements */
+.form-control {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.form-control:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 0.25rem rgba(247, 149, 173, 0.25);
+}
+
 .form-label {
     color: var(--light-text);
     font-weight: 600;
+}
+
+.form-select:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 0.25rem rgba(247, 149, 173, 0.25);
+}
+
+/* Breadcrumbs */
+.breadcrumb-item a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.breadcrumb-item.active {
+    color: var(--light-text);
+}
+
+/* CTA Sections */
+.cta-section {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+}
+
+.cta-accent {
+    border-left: 5px solid var(--accent-color);
+    padding-left: 1.5rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 60vh;
+    }
+    
+    .timeline:before {
+        left: 40px;
+    }
+    
+    .display-4 {
+        font-size: 2.5rem;
+    }
 }
