@@ -1,261 +1,98 @@
-/* Care-Filled Support for Meg - CSS Theme
-   Based on logo colors:
-   - Light Pink Background: #FDF2F8
-   - Red Heart: #BB2E2B
-   - Pink Heart: #ED90AF 
-   - Dark Outline/Text: #736269
-   - Light Outline: #B7AEB3
-*/
+/* style.css */
 
+/* 1. Import the script font and a clean sans for body text */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@400;600&display=swap');
+
+/* 2. Define your color palette */
 :root {
-    --primary-color: #BB2E2B; /* Red heart */
-    --secondary-color: #ED90AF; /* Pink heart */
-    --background-color: #FDF2F8; /* Light pink background */
-    --text-color: #736269; /* Dark outline/text */
-    --accent-color: #B7AEB3; /* Light outline/accents */
-    --white: #ffffff;
-    --dark: #333333;
+  --color-bg: #fff1f3;         /* very pale pink */
+  --color-primary: #D94A42;    /* heart-red */
+  --color-secondary: #F18EB5;  /* heart-pink */
+  --color-text-dark: #333333;
+  --color-text-light: #ffffff;
 }
 
-/* Base Styles */
+/* 3. Global reset & body styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-    color: var(--text-color);
-    line-height: 1.6;
-    background-color: var(--background-color);
+  background-color: var(--color-bg);
+  color: var(--color-text-dark);
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.6;
+  padding: 2rem;
 }
 
-/* Typography */
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-weight: 700;
-    color: var(--text-color);
+/* 4. Logo container */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 280px;  /* adjust as needed */
+  height: 280px;
+  margin: 0 auto 2rem;
+  border-radius: 50%;
+  /* optional subtle outline mimicking the hands circle */
+  border: 2px solid var(--color-primary);
+  background-color: var(--color-bg);
 }
 
-.script-heading {
-    font-family: 'Dancing Script', cursive;
-    font-weight: 600;
+/* 5. Script-style title text */
+.logo .title {
+  position: absolute;
+  text-align: center;
+  font-family: 'Great Vibes', cursive;
+  color: var(--color-primary);
+  font-size: 2.5rem;
+  pointer-events: none;
+  line-height: 1;
 }
 
-.display-4 {
-    font-family: 'Dancing Script', cursive;
-    font-weight: 700;
+/* 6. Accent hearts (position with HTML) */
+.heart {
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--color-secondary);
+  clip-path: 
+    polygon(
+      50% 0%, 
+      61% 18%, 
+      82% 18%, 
+      88% 36%, 
+      50% 100%, 
+      12% 36%, 
+      18% 18%, 
+      39% 18%
+    );
+  /* red hearts can override with a modifier */
+}
+.heart--primary {
+  background-color: var(--color-primary);
 }
 
-p {
-    color: var(--dark);
+/* 7. Buttons & UI elements in keeping with the curves */
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--color-text-light);
+  background-color: var(--color-primary);
+  border-radius: 2rem;
+  transition: background-color 0.3s ease;
 }
 
-.lead {
-    font-weight: 500;
+.button:hover {
+  background-color: var(--color-secondary);
 }
 
-/* Color Classes */
-.text-primary {
-    color: var(--primary-color) !important;
-}
-
-.text-secondary {
-    color: var(--secondary-color) !important;
-}
-
-.bg-primary {
-    background-color: var(--primary-color) !important;
-}
-
-.bg-secondary {
-    background-color: var(--secondary-color) !important;
-}
-
-.bg-light {
-    background-color: var(--background-color) !important;
-}
-
-/* Navigation */
-.navbar {
-    background-color: var(--white) !important;
-    box-shadow: 0 2px 10px rgba(115, 98, 105, 0.1);
-}
-
-.navbar-brand img {
-    max-height: 60px;
-}
-
-.nav-link {
-    font-weight: 600;
-    color: var(--text-color);
-    transition: color 0.3s ease;
-}
-
-.nav-link:hover, .nav-link.active {
-    color: var(--primary-color) !important;
-}
-
-/* Buttons */
-.btn-primary {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-    color: var(--white);
-}
-
-.btn-primary:hover, .btn-primary:focus {
-    background-color: #A42824; /* Darkened red */
-    border-color: #A42824;
-}
-
-.btn-secondary {
-    background-color: var(--secondary-color);
-    border-color: var(--secondary-color);
-    color: var(--white);
-}
-
-.btn-secondary:hover, .btn-secondary:focus {
-    background-color: #D67A99; /* Darkened pink */
-    border-color: #D67A99;
-}
-
-.btn-outline-light {
-    color: var(--white);
-    border-color: var(--white);
-}
-
-.btn-outline-light:hover {
-    color: var(--primary-color);
-    background-color: var(--white);
-}
-
-.btn-outline-primary {
-    color: var(--primary-color);
-    border-color: var(--primary-color);
-}
-
-.btn-outline-primary:hover {
-    background-color: var(--primary-color);
-    color: var(--white);
-}
-
-/* Hero Section */
-.hero-section {
-    position: relative;
-}
-
-.hero-image img {
-    width: 100%;
-    height: 80vh;
-    object-fit: cover;
-}
-
-.overlay {
-    background: rgba(187, 46, 43, 0.6) !important;
-}
-
-.hero-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-}
-
-/* Cards & Features */
-.card {
-    border-radius: 12px;
-    overflow: hidden;
-    border: none;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(115, 98, 105, 0.1) !important;
-}
-
-.shadow-sm {
-    box-shadow: 0 4px 12px rgba(115, 98, 105, 0.08) !important;
-}
-
-.rounded-circle.bg-primary {
-    background-color: var(--primary-color) !important;
-}
-
-/* Timeline for Application Process */
-.timeline {
-    position: relative;
-}
-
-.timeline:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 2px;
-    margin-left: -1px;
-    background-color: var(--accent-color);
-}
-
-.inner-circle {
-    background-color: var(--primary-color) !important;
-}
-
-/* Footer */
-footer.bg-dark {
-    background-color: var(--text-color) !important;
-}
-
-footer a {
-    transition: color 0.3s ease;
-}
-
-footer a:hover {
-    color: var(--secondary-color) !important;
-    text-decoration: none;
-}
-
-.social-icons a {
-    transition: transform 0.3s ease;
-}
-
-.social-icons a:hover {
-    transform: translateY(-3px);
-}
-
-/* Form Elements */
-.form-control:focus {
-    border-color: var(--secondary-color);
-    box-shadow: 0 0 0 0.25rem rgba(237, 144, 175, 0.25);
-}
-
-.form-label {
-    color: var(--text-color);
-}
-
-/* Testimonials */
-.fa-quote-left {
-    color: var(--primary-color) !important;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .hero-image img {
-        height: 60vh;
-    }
-    
-    .timeline:before {
-        left: 40px;
-    }
-}
-
-/* Special Sections */
-.page-header {
-    background-color: rgba(237, 144, 175, 0.1) !important;
-}
-
-.breadcrumb-item a {
-    color: var(--primary-color);
-    text-decoration: none;
-}
-
-.breadcrumb-item.active {
-    color: var(--text-color);
-}
+/* 8. Utility classes */
+.text-center { text-align: center; }
+.mt-2 { margin-top: 2rem; }
