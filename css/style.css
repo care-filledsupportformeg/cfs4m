@@ -273,6 +273,36 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Footer */
 footer.bg-dark {
+    background: linear-gradient(135deg, #fff0f5 0%, #3a232b 100%) !important; /* Soft pink to deep logo brown */
+    color: #fffbe6 !important; /* Creamy light for text */
+}
+
+footer.bg-dark h5,
+footer.bg-dark p,
+footer.bg-dark .text-white {
+    color: #fffbe6 !important; /* Creamy light for headings and text */
+}
+
+footer.bg-dark a,
+footer.bg-dark a.text-white,
+footer.bg-dark .social-icons a {
+    color: #D32D2F !important; /* Primary Red from your logo */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer.bg-dark a:hover,
+footer.bg-dark a.text-white:hover,
+footer.bg-dark .social-icons a:hover {
+    color: #FFE066 !important; /* Accent Yellow from your logo */
+    text-decoration: underline;
+}
+
+footer.bg-dark hr {
+    border-top: 1px solid #fffbe6;
+}
+
+footer.bg-dark {
     background: linear-gradient(135deg, var(--text-color) 0%, #4A3E40 100%) !important;
 }
 
