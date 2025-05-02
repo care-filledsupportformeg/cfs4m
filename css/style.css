@@ -1,174 +1,107 @@
----
----
-
-@import "{{ site.theme }}";
-
-/* Care-Filled Support - Theme based on logo */
-
 :root {
-  /* Main color palette from logo */
-  --heart-red: #C23A3A;
-  --heart-pink: #E88CB7;
-  --background-pink: #F9E6EF;
-  --text-black: #000000;
-  
-  /* Secondary color variations */
-  --pink-light: #F5D0E3;
-  --pink-dark: #D97BA1;
-  --red-dark: #A82E2E;
-  
-  /* Font families */
+  --heart-red: #c23a3a;
+  --heart-pink: #e88cb7;
+  --background-pink: #f9e6ef;
+  --text-black: #222;
   --font-script: 'Dancing Script', 'Brush Script MT', cursive;
   --font-body: 'Quicksand', 'Helvetica Neue', Arial, sans-serif;
 }
 
-/* Base Styles */
 body {
-  background-color: var(--background-pink);
-  font-family: var(--font-body);
+  background: var(--background-pink);
   color: var(--text-black);
-  line-height: 1.6;
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 0;
+  line-height: 1.7;
 }
 
-/* Typography */
-h1, h2, h3, .site-title {
+header, .navbar, .site-header {
+  background: var(--background-pink);
+  border-bottom: 1px solid #f3cdd7;
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
+.site-title, h1, h2, h3 {
   font-family: var(--font-script);
   color: var(--heart-red);
+  margin-bottom: 0.5em;
   letter-spacing: 0.03em;
-}
-
-h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
 }
 
 h2 {
   color: var(--heart-pink);
-  font-size: 2rem;
 }
 
 a, a:visited {
   color: var(--heart-pink);
-  transition: color 0.3s ease;
+  text-decoration: none;
+  transition: color 0.2s;
 }
 
 a:hover {
   color: var(--heart-red);
-  text-decoration: none;
 }
 
-/* Header and Navigation */
-.page-header, header {
-  border-bottom: 1px solid rgba(194, 58, 58, 0.2);
-  background: linear-gradient(to right, var(--background-pink), white, var(--background-pink));
-}
-
-.main-content h1, .main-content h2, .main-content h3 {
-  color: var(--heart-red);
-  font-family: var(--font-script);
-}
-
-.main-content h2 {
-  color: var(--heart-pink);
-}
-
-/* Buttons and CTAs */
-.btn, button, .button {
-  background-color: var(--heart-pink);
-  color: white;
+.button, .btn, button, input[type="submit"] {
+  background: var(--heart-pink);
+  color: #fff;
   border: none;
-  border-radius: 25px;
-  padding: 10px 25px;
+  border-radius: 30px;
+  padding: 0.6em 2em;
   font-family: var(--font-script);
-  font-size: 1.2rem;
-  transition: all 0.3s ease;
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin: 0.5em 0;
 }
 
-.btn:hover, button:hover, .button:hover {
-  background-color: var(--heart-red);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(194, 58, 58, 0.2);
+.button:hover, .btn:hover, button:hover, input[type="submit"]:hover {
+  background: var(--heart-red);
 }
 
-/* Cards and Content Blocks */
-.card, .post {
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0 2px 15px rgba(232, 140, 183, 0.15);
-  padding: 20px;
-  margin-bottom: 30px;
-  transition: transform 0.3s ease;
+.card, .content-block {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px #e88cb740;
+  border: 1px solid #f3cdd7;
+  margin-bottom: 2rem;
+  padding: 2rem;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-}
-
-/* Custom Elements - Heart Decorations */
-.heart-icon {
-  display: inline-block;
-  position: relative;
-  width: 20px;
-  height: 20px;
-  margin: 0 5px;
-}
-
-.heart-icon::before {
-  content: "♥";
-  position: absolute;
-  font-size: 20px;
-}
-
-.heart-icon.red::before {
-  color: var(--heart-red);
-}
-
-.heart-icon.pink::before {
-  color: var(--heart-pink);
-}
-
-/* Circular Hand Design - Header Logo Styling */
-.logo-circle {
-  position: relative;
-  width: 150px;
-  height: 150px;
-  margin: 0 auto;
-  border-radius: 50%;
-  border: 1px solid var(--text-black);
-}
-
-/* Footer */
 footer {
-  background-color: var(--background-pink);
-  border-top: 1px solid rgba(232, 140, 183, 0.3);
-  padding: 20px 0;
+  background: var(--background-pink);
+  color: var(--heart-red);
+  border-top: 1px solid #f3cdd7;
+  padding: 2rem 0;
   text-align: center;
 }
 
-/* Social Media Icons */
 .social-links a {
   color: var(--heart-pink);
-  margin: 0 10px;
-  font-size: 1.5rem;
-  transition: color 0.3s ease;
+  margin: 0 0.7em;
+  font-size: 2rem;
+  transition: color 0.2s;
 }
 
 .social-links a:hover {
   color: var(--heart-red);
 }
 
-/* Mobile Responsiveness */
-@media screen and (max-width: 600px) {
-  h1 {
-    font-size: 2rem;
+@media (max-width: 600px) {
+  .card, .content-block {
+    padding: 1rem;
   }
-  
-  h2 {
-    font-size: 1.5rem;
-  }
-  
-  .logo-circle {
-    width: 100px;
-    height: 100px;
-  }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.3rem; }
 }
+
+/* Optional: Decorative hearts for section dividers */
+.heart-divider {
+  text-align: center;
+  margin: 2em 0 1em 0;
+  font-size: 2rem;
+}
+.heart-divider .red { color: var(--heart-red); }
+.heart-divider .pink { color: var(--heart-pink); }
