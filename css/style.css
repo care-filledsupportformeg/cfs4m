@@ -273,20 +273,20 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Footer */
 footer.bg-dark {
-    background: linear-gradient(135deg, #fff0f5 0%, #23272b 100%) !important;
-    color: #f8f8f8 !important;
+    background: linear-gradient(135deg, #FFF1F6 0%, #3B2A31 100%) !important;
+    color: #fffbe6 !important;
 }
 
 footer.bg-dark h5,
 footer.bg-dark p,
 footer.bg-dark .text-white {
-    color: #f8f8f8 !important;
+    color: #fffbe6 !important;
 }
 
 footer.bg-dark a,
 footer.bg-dark a.text-white,
 footer.bg-dark .social-icons a {
-    color: #CE2D2D !important; /* logo red heart for links */
+    color: #D32D2F !important; /* Primary Red from logo */
     text-decoration: none;
     transition: color 0.3s;
 }
@@ -294,12 +294,12 @@ footer.bg-dark .social-icons a {
 footer.bg-dark a:hover,
 footer.bg-dark a.text-white:hover,
 footer.bg-dark .social-icons a:hover {
-    color: #FDDC5C !important; /* logo yellow accent on hover */
+    color: #FFE066 !important; /* Accent Yellow from logo */
     text-decoration: underline;
 }
 
 footer.bg-dark hr {
-    border-top: 1px solid #f8f8f8;
+    border-top: 1px solid #fffbe6;
 }
 
 footer a {
