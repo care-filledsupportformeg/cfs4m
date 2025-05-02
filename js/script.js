@@ -1,41 +1,33 @@
-// Wait for the document to be fully loaded
+// js/script.js
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize contact form handling
+    // Contact form handling
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function(event) {
             event.preventDefault();
-            // In a real implementation, you would send the form data to a server
             alert('Thank you for your message! We will get back to you soon.');
             contactForm.reset();
         });
     }
-    
-    // Initialize smooth scrolling for all anchor links
+
+    // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
             const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
+            if (targetId === '#' || !document.querySelector(targetId)) return;
+            e.preventDefault();
+            document.querySelector(targetId).scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
         });
     });
-    
-    // Add active class to current nav item based on URL
-    const currentPath = window.location.pathname;
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    navLinks.forEach(link => {
-        if (link.getAttribute('href') === currentPath || 
-            (currentPath.endsWith('/') && link.getAttribute('href') === 'index.html')) {
+
+    // Highlight active nav link
+    const currentPath = window.location.pathname.split('/').pop();
+    document.querySelectorAll('.nav-link').forEach(link => {
+        if (link.getAttribute('href') === currentPath) {
             link.classList.add('active');
         } else {
             link.classList.remove('active');
