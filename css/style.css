@@ -1,466 +1,176 @@
-/* Custom CSS theme based on Care-Filled Support For Meg logo */
-/* Create this as assets/css/style.scss in your GitHub Pages repository */
+/* ======================================== */
+/* Theme based on 'Care Filled Support' Logo */
+/* ======================================== */
 
----
----
-
-@import "{{ site.theme }}";
-
-/* Color scheme derived from logo */
+/* --- Root Variables --- */
 :root {
-  --primary-red: #d13c3c;      /* Deep red from the heart */
-  --primary-pink: #f19cb7;     /* Pink from the second heart */
-  --accent-black: #231f20;     /* Black from the text and outline */
-  --background-color: #faf9fa; /* Very light background similar to logo background */
-  --text-color: #231f20;       /* Dark text color */
-  --link-color: #d13c3c;       /* Red for links */
-  --section-color: #f8f4f5;    /* Very light pink background for sections */
-  --border-color: #e6e6e6;     /* Light gray for borders */
+  --background-soft-pink: #FFF8F9;
+  --heart-red: #C82432;
+  --heart-pink: #F989B0;
+  --text-black: #24292e; /* GitHub default dark grey */
+  --line-art-black: #333333;
+  --link-color: var(--heart-red);
+  --link-hover-color: var(--heart-pink);
+  --border-color: #eaeaea; /* Lighter border */
+  --button-text-color: #ffffff;
+
+  /* Consider web-safe fonts that evoke a similar feel or provide good contrast */
+  --font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"; /* Standard GitHub font stack */
+  --font-headings: 'Georgia', serif; /* A softer serif for headings */
 }
 
-/* Base styles */
+/* --- Base Styles --- */
 body {
-  font-family: "Libre Baskerville", Georgia, serif;  /* Elegant serif font similar to logo script */
-  color: var(--text-color);
-  background-color: var(--background-color);
-  line-height: 1.8;
+  background-color: var(--background-soft-pink);
+  color: var(--text-black);
+  font-family: var(--font-primary);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0; /* Remove default padding if applying to full page */
 }
 
-/* Typography */
+/* Apply padding to main content area if needed */
+.container { /* Example container */
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff; /* White inner background for contrast */
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+
+/* --- Typography --- */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Playfair Display", "Times New Roman", serif;  /* Elegant serif for headings */
-  color: var(--primary-red);
-  margin-top: 1.5em;
-  margin-bottom: 0.5em;
+  font-family: var(--font-headings);
+  color: var(--text-black);
+  margin-top: 1.8em;
+  margin-bottom: 0.6em;
+  line-height: 1.3;
 }
 
 h1 {
-  font-size: 2.5em;
-  border-bottom: none;
-  text-align: center;
-  margin-bottom: 1em;
+  color: var(--heart-red); /* Use prominent red for main heading */
+  font-size: 2.2em;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.3em;
 }
 
 h2 {
+  color: var(--heart-pink); /* Use pink for secondary headings */
   font-size: 1.8em;
-  border-bottom: 2px solid var(--primary-pink);
-  padding-bottom: 0.3em;
-  width: fit-content;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.2em;
 }
 
-/* Links */
+h3 {
+    font-size: 1.5em;
+    color: var(--line-art-black);
+}
+
+p {
+  margin-bottom: 1.2em;
+}
+
 a {
   color: var(--link-color);
   text-decoration: none;
-  transition: color 0.3s ease;
-  
-  &:hover {
-    color: var(--primary-pink);
-    text-decoration: underline;
-  }
+  transition: color 0.2s ease-in-out;
 }
 
-/* Layout and containers */
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 20px;
+a:hover,
+a:focus {
+  color: var(--link-hover-color);
+  text-decoration: underline;
 }
 
-section {
-  background-color: white;
-  border-radius: 12px;
-  padding: 30px;
-  margin: 30px 0;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+strong, b {
+    color: var(--line-art-black); /* Slightly darker emphasis */
 }
 
-/* Header with logo */
-header {
-  text-align: center;
-  padding: 30px 0;
-  
-  img.logo {
-    max-width: 250px;
-    height: auto;
-    margin-bottom: 20px;
-  }
-  
-  .header-links {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-    
-    a {
-      padding: 10px 15px;
-      border-radius: 25px;
-      background-color: white;
-      border: 2px solid var(--primary-red);
-      color: var(--primary-red);
-      font-weight: bold;
-      transition: all 0.3s ease;
-      
-      &:hover {
-        background-color: var(--primary-red);
-        color: white;
-        text-decoration: none;
-      }
-    }
-  }
-}
-
-/* Navigation */
-nav {
-  background-color: white;
-  border-bottom: 1px solid var(--border-color);
-  padding: 15px 0;
-  margin-bottom: 30px;
-  text-align: center;
-  
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    
-    li {
-      margin: 0 15px;
-      
-      a {
-        padding: 8px 0;
-        display: inline-block;
-        position: relative;
-        font-weight: 500;
-        
-        &:after {
-          content: '';
-          position: absolute;
-          width: 0;
-          height: 2px;
-          bottom: 0;
-          left: 0;
-          background-color: var(--primary-pink);
-          transition: width 0.3s ease;
-        }
-        
-        &:hover:after, &.active:after {
-          width: 100%;
-        }
-      }
-    }
-  }
-}
-
-/* Team member cards */
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-gap: 30px;
-  margin: 30px 0;
-}
-
-.team-member {
-  background-color: white;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
-  
-  &:hover {
-    transform: translateY(-5px);
-  }
-  
-  img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-bottom: 3px solid var(--primary-pink);
-  }
-  
-  .team-info {
-    padding: 20px;
-    text-align: center;
-    
-    h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      color: var(--primary-red);
-    }
-    
-    p {
-      margin: 0;
-      color: var(--text-color);
-    }
-  }
-}
-
-/* Gallery styling */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 20px;
-  margin: 30px 0;
-}
-
-.gallery-item {
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  
-  img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.3s ease;
-    
-    &:hover {
-      transform: scale(1.03);
-    }
-  }
-  
-  .caption {
-    padding: 15px;
-    background-color: white;
-    border-top: 3px solid var(--primary-pink);
-    
-    p {
-      margin: 0;
-      text-align: center;
-      font-style: italic;
-    }
-  }
-}
-
-/* Buttons */
-.button {
+/* --- Links & Buttons --- */
+.btn,
+button {
   display: inline-block;
-  background-color: var(--primary-red);
-  color: white;
-  padding: 12px 25px;
-  border-radius: 30px;
+  padding: 10px 18px;
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--button-text-color);
+  background-color: var(--heart-red);
+  border: 1px solid var(--heart-red);
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
   text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  border: 2px solid var(--primary-red);
-  margin-top: 20px;
-  
-  &:hover {
-    background-color: white;
-    color: var(--primary-red);
-    text-decoration: none;
-  }
-  
-  &.secondary {
-    background-color: var(--primary-pink);
-    border-color: var(--primary-pink);
-    
-    &:hover {
-      background-color: white;
-      color: var(--primary-pink);
-    }
-  }
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-/* Contact form styling */
-form {
-  max-width: 600px;
-  margin: 30px auto;
-  
-  .form-group {
-    margin-bottom: 25px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: var(--primary-red);
-  }
-  
-  input[type="text"],
-  input[type="email"],
-  select,
-  textarea {
-    width: 100%;
-    padding: 12px 15px;
-    border: 2px solid var(--border-color);
-    border-radius: 8px;
-    font-family: inherit;
-    font-size: 16px;
-    transition: border-color 0.3s ease;
-    
-    &:focus {
-      border-color: var(--primary-pink);
-      outline: none;
-    }
-  }
-  
-  textarea {
-    resize: vertical;
-    min-height: 150px;
-  }
-  
-  button[type="submit"] {
-    background-color: var(--primary-red);
-    color: white;
-    border: 2px solid var(--primary-red);
-    padding: 12px 25px;
-    border-radius: 30px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    
-    &:hover {
-      background-color: white;
-      color: var(--primary-red);
-    }
-  }
+.btn:hover,
+button:hover {
+  background-color: var(--heart-pink);
+  border-color: var(--heart-pink);
+  color: var(--text-black); /* Change text color for contrast on pink */
+  text-decoration: none;
 }
 
-/* Footer */
-footer {
-  background-color: white;
-  padding: 40px 0;
-  margin-top: 50px;
-  border-top: 1px solid var(--border-color);
-  text-align: center;
-  
-  .social-links {
-    margin: 20px 0;
-    
-    a {
-      display: inline-block;
-      margin: 0 10px;
-      color: var(--primary-red);
-      font-size: 1.5em;
-      transition: color 0.3s ease;
-      
-      &:hover {
-        color: var(--primary-pink);
-      }
-    }
-  }
-  
-  .copyright {
-    margin-top: 20px;
-    font-size: 0.9em;
-    color: #777;
-  }
+/* Secondary button style */
+.btn-secondary {
+    background-color: transparent;
+    color: var(--heart-pink);
+    border: 1px solid var(--heart-pink);
 }
 
-/* Hero section for homepage */
-.hero {
-  text-align: center;
-  padding: 60px 0;
-  background-color: white;
-  border-radius: 12px;
-  margin-bottom: 40px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  
-  img {
-    max-width: 300px;
-    border-radius: 10px;
-    margin-bottom: 30px;
-    border: 3px solid var(--primary-pink);
-  }
-  
-  h1 {
-    margin-bottom: 20px;
-  }
-  
-  p {
-    font-size: 1.2em;
-    max-width: 800px;
-    margin: 0 auto 30px;
-  }
-  
-  .buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
+.btn-secondary:hover {
+    background-color: var(--heart-pink);
+    color: var(--text-black);
+    border: 1px solid var(--heart-pink);
 }
 
-/* Mission statement highlight */
-.mission-statement {
-  background-color: var(--section-color);
-  border-left: 5px solid var(--primary-red);
-  padding: 25px;
-  margin: 30px 0;
+
+/* --- Other Elements --- */
+hr {
+  border: 0;
+  height: 1px;
+  background-color: var(--border-color);
+  margin: 2.5em 0;
+}
+
+code, pre {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  background-color: #f6f8fa; /* GitHub's code background */
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  padding: 0.2em 0.4em;
+  font-size: 85%; /* GitHub style */
+}
+
+pre {
+  padding: 16px;
+  overflow: auto;
+  line-height: 1.45;
+}
+
+blockquote {
+  margin-left: 0;
+  padding-left: 1em;
+  border-left: 4px solid var(--heart-pink);
+  color: #586069; /* GitHub's muted text color */
   font-style: italic;
-  font-size: 1.1em;
-  line-height: 1.8;
-  
-  p {
-    margin: 0;
-  }
 }
 
-/* Feature boxes for homepage */
-.features {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 30px;
-  margin: 40px 0;
-  
-  .feature-box {
-    background-color: white;
-    border-radius: 10px;
-    padding: 30px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
-    
-    &:hover {
-      transform: translateY(-5px);
-    }
-    
-    i {
-      font-size: 2.5em;
-      color: var(--primary-red);
-      margin-bottom: 20px;
-    }
-    
-    h3 {
-      margin-top: 0;
-    }
-    
-    p {
-      margin-bottom: 0;
-    }
-  }
+/* --- Optional: Logo Placeholder --- */
+.logo-placeholder {
+    /* Style this if you want to display the logo */
+    display: block;
+    max-width: 200px; /* Adjust as needed */
+    margin: 0 auto 20px auto; /* Center it */
+}
+.logo-placeholder img {
+    max-width: 100%;
+    height: auto;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2em;
-  }
-  
-  h2 {
-    font-size: 1.5em;
-  }
-  
-  .hero {
-    padding: 40px 20px;
-  }
-  
-  .team-grid,
-  .gallery,
-  .features {
-    grid-template-columns: 1fr;
-  }
-  
-  nav ul {
-    flex-direction: column;
-    
-    li {
-      margin: 5px 0;
-    }
-  }
-}
+/* ======================================== */
