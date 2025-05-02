@@ -1,107 +1,261 @@
+/* Care-Filled Support for Meg - CSS Theme
+   Based on logo colors:
+   - Light Pink Background: #FDF2F8
+   - Red Heart: #BB2E2B
+   - Pink Heart: #ED90AF 
+   - Dark Outline/Text: #736269
+   - Light Outline: #B7AEB3
+*/
+
 :root {
-  --heart-red: #c23a3a;
-  --heart-pink: #e88cb7;
-  --background-pink: #f9e6ef;
-  --text-black: #222;
-  --font-script: 'Dancing Script', 'Brush Script MT', cursive;
-  --font-body: 'Quicksand', 'Helvetica Neue', Arial, sans-serif;
+    --primary-color: #BB2E2B; /* Red heart */
+    --secondary-color: #ED90AF; /* Pink heart */
+    --background-color: #FDF2F8; /* Light pink background */
+    --text-color: #736269; /* Dark outline/text */
+    --accent-color: #B7AEB3; /* Light outline/accents */
+    --white: #ffffff;
+    --dark: #333333;
 }
 
+/* Base Styles */
 body {
-  background: var(--background-pink);
-  color: var(--text-black);
-  font-family: var(--font-body);
-  margin: 0;
-  padding: 0;
-  line-height: 1.7;
+    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--background-color);
 }
 
-header, .navbar, .site-header {
-  background: var(--background-pink);
-  border-bottom: 1px solid #f3cdd7;
-  padding: 1.5rem 0;
-  text-align: center;
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    color: var(--text-color);
 }
 
-.site-title, h1, h2, h3 {
-  font-family: var(--font-script);
-  color: var(--heart-red);
-  margin-bottom: 0.5em;
-  letter-spacing: 0.03em;
+.script-heading {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 600;
 }
 
-h2 {
-  color: var(--heart-pink);
+.display-4 {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
 }
 
-a, a:visited {
-  color: var(--heart-pink);
-  text-decoration: none;
-  transition: color 0.2s;
+p {
+    color: var(--dark);
 }
 
-a:hover {
-  color: var(--heart-red);
+.lead {
+    font-weight: 500;
 }
 
-.button, .btn, button, input[type="submit"] {
-  background: var(--heart-pink);
-  color: #fff;
-  border: none;
-  border-radius: 30px;
-  padding: 0.6em 2em;
-  font-family: var(--font-script);
-  font-size: 1.15rem;
-  cursor: pointer;
-  transition: background 0.2s;
-  margin: 0.5em 0;
+/* Color Classes */
+.text-primary {
+    color: var(--primary-color) !important;
 }
 
-.button:hover, .btn:hover, button:hover, input[type="submit"]:hover {
-  background: var(--heart-red);
+.text-secondary {
+    color: var(--secondary-color) !important;
 }
 
-.card, .content-block {
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 2px 12px #e88cb740;
-  border: 1px solid #f3cdd7;
-  margin-bottom: 2rem;
-  padding: 2rem;
+.bg-primary {
+    background-color: var(--primary-color) !important;
 }
 
-footer {
-  background: var(--background-pink);
-  color: var(--heart-red);
-  border-top: 1px solid #f3cdd7;
-  padding: 2rem 0;
-  text-align: center;
+.bg-secondary {
+    background-color: var(--secondary-color) !important;
 }
 
-.social-links a {
-  color: var(--heart-pink);
-  margin: 0 0.7em;
-  font-size: 2rem;
-  transition: color 0.2s;
+.bg-light {
+    background-color: var(--background-color) !important;
 }
 
-.social-links a:hover {
-  color: var(--heart-red);
+/* Navigation */
+.navbar {
+    background-color: var(--white) !important;
+    box-shadow: 0 2px 10px rgba(115, 98, 105, 0.1);
 }
 
-@media (max-width: 600px) {
-  .card, .content-block {
-    padding: 1rem;
-  }
-  h1 { font-size: 2rem; }
-  h2 { font-size: 1.3rem; }
+.navbar-brand img {
+    max-height: 60px;
 }
 
-/* Optional: Decorative hearts for section dividers */
-.heart-divider {
-  text-align: center;
-  margin: 2em 0 1em 0;
-  font-size: 2rem;
+.nav-link {
+    font-weight: 600;
+    color: var(--text-color);
+    transition: color 0.3s ease;
 }
-.heart-divider .red { color: var(--heart-red); }
-.heart-divider .pink { color: var(--heart-pink); }
+
+.nav-link:hover, .nav-link.active {
+    color: var(--primary-color) !important;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: #A42824; /* Darkened red */
+    border-color: #A42824;
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: var(--white);
+}
+
+.btn-secondary:hover, .btn-secondary:focus {
+    background-color: #D67A99; /* Darkened pink */
+    border-color: #D67A99;
+}
+
+.btn-outline-light {
+    color: var(--white);
+    border-color: var(--white);
+}
+
+.btn-outline-light:hover {
+    color: var(--primary-color);
+    background-color: var(--white);
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+}
+
+.overlay {
+    background: rgba(187, 46, 43, 0.6) !important;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+/* Cards & Features */
+.card {
+    border-radius: 12px;
+    overflow: hidden;
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(115, 98, 105, 0.1) !important;
+}
+
+.shadow-sm {
+    box-shadow: 0 4px 12px rgba(115, 98, 105, 0.08) !important;
+}
+
+.rounded-circle.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+/* Timeline for Application Process */
+.timeline {
+    position: relative;
+}
+
+.timeline:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    margin-left: -1px;
+    background-color: var(--accent-color);
+}
+
+.inner-circle {
+    background-color: var(--primary-color) !important;
+}
+
+/* Footer */
+footer.bg-dark {
+    background-color: var(--text-color) !important;
+}
+
+footer a {
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--secondary-color) !important;
+    text-decoration: none;
+}
+
+.social-icons a {
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: translateY(-3px);
+}
+
+/* Form Elements */
+.form-control:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 0.25rem rgba(237, 144, 175, 0.25);
+}
+
+.form-label {
+    color: var(--text-color);
+}
+
+/* Testimonials */
+.fa-quote-left {
+    color: var(--primary-color) !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-image img {
+        height: 60vh;
+    }
+    
+    .timeline:before {
+        left: 40px;
+    }
+}
+
+/* Special Sections */
+.page-header {
+    background-color: rgba(237, 144, 175, 0.1) !important;
+}
+
+.breadcrumb-item a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.breadcrumb-item.active {
+    color: var(--text-color);
+}
