@@ -1,360 +1,298 @@
-/* Care-Filled Support for Meg - CSS Theme
-   Based on logo colors with complementary yellow accent
-   Primary: #CE2D2D (red heart)
-   Secondary: #F795AD (pink heart)
-   Background: #FFF0F5 (light pink)
-   Accent: #FDDC5C (butter yellow)
-   Text: #333333 (dark gray)
-*/
+/* Care Filled Support For Meg - Main CSS File */
+/* Based on the logo's soft, caring aesthetic with red and pink heart theme */
 
 :root {
-    --primary-color: #CE2D2D; /* Red heart */
-    --secondary-color: #F795AD; /* Pink heart */
-    --background-color: #FFF0F5; /* Light pink background */
-    --accent-color: #FDDC5C; /* Complementary yellow */
-    --text-color: #333333; /* Dark text for readability */
-    --light-text: #736269; /* Softer text for secondary content */
-    --white: #ffffff;
-    --gray-light: #f8f9fa;
-    --border-color: #EADCE0; /* Soft border color */
+  /* Color palette derived from logo */
+  --primary-red: #cc3333;
+  --primary-pink: #f7a0b9;
+  --soft-pink: #ffedf2;
+  --dark-text: #333333;
+  --light-text: #ffffff;
+  --background: #faf6f7;
+  --accent-gray: #e6e6e6;
 }
 
-/* Base Styles */
+/* Base styles */
 body {
-    font-family: 'Nunito', 'Segoe UI', sans-serif;
-    color: var(--text-color);
-    line-height: 1.6;
-    background-color: var(--background-color);
+  font-family: 'Montserrat', 'Open Sans', sans-serif;
+  background-color: var(--background);
+  color: var(--dark-text);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Dancing Script', cursive;
-    font-weight: 700;
-    color: var(--text-color);
+h1, h2, h3, h4, h5 {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-weight: 400;
+  margin-top: 0;
 }
 
-.display-4 {
-    font-family: 'Dancing Script', cursive;
-    font-weight: 700;
-    font-size: 3.5rem;
+h1 {
+  font-size: 2.5rem;
+  color: var(--primary-red);
 }
 
-.lead {
-    font-weight: 500;
-    color: var(--light-text);
+h2 {
+  font-size: 2rem;
+  color: var(--primary-red);
 }
 
-/* Color Classes */
-.text-primary {
-    color: var(--primary-color) !important;
+h3 {
+  font-size: 1.75rem;
+  color: var(--dark-text);
 }
 
-.text-secondary {
-    color: var(--secondary-color) !important;
+p {
+  margin-bottom: 1.2rem;
 }
 
-.text-accent {
-    color: var(--accent-color) !important;
+/* Logo styling */
+.logo {
+  max-width: 200px;
+  display: block;
+  margin: 0 auto;
 }
 
-.bg-primary {
-    background-color: var(--primary-color) !important;
+/* Container styling */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-.bg-secondary {
-    background-color: var(--secondary-color) !important;
-}
-
-.bg-accent {
-    background-color: var(--accent-color) !important;
-}
-
-.bg-light {
-    background-color: var(--background-color) !important;
+/* Header styling */
+header {
+  text-align: center;
+  padding: 2rem 0;
+  background-color: var(--soft-pink);
+  border-bottom: 1px solid var(--primary-pink);
 }
 
 /* Navigation */
-.navbar {
-    background-color: var(--white) !important;
-    box-shadow: 0 2px 15px rgba(206, 45, 45, 0.1);
+nav {
+  background-color: var(--primary-red);
+  padding: 1rem 0;
 }
 
-.navbar-brand img {
-    max-height: 60px;
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
 }
 
-.nav-link {
-    font-weight: 600;
-    color: var(--text-color);
-    transition: color 0.3s ease;
-    margin: 0 5px;
+nav li {
+  margin: 0 1rem;
 }
 
-.nav-link:hover {
-    color: var(--primary-color) !important;
+nav a {
+  color: var(--light-text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-.nav-link.active {
-    color: var(--primary-color) !important;
-    border-bottom: 2px solid var(--primary-color);
+nav a:hover {
+  color: var(--soft-pink);
 }
 
-/* Buttons */
-.btn-primary {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-    color: var(--white);
+/* Button styling */
+.btn {
+  display: inline-block;
+  background-color: var(--primary-red);
+  color: var(--light-text);
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
 }
 
-.btn-primary:hover, .btn-primary:focus {
-    background-color: #B82626; /* Darkened red */
-    border-color: #B82626;
+.btn:hover {
+  background-color: var(--primary-pink);
+  transform: translateY(-2px);
 }
 
-.btn-secondary {
-    background-color: var(--secondary-color);
-    border-color: var(--secondary-color);
-    color: var(--white);
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--primary-red);
+  color: var(--primary-red);
 }
 
-.btn-secondary:hover, .btn-secondary:focus {
-    background-color: #E58199; /* Darkened pink */
-    border-color: #E58199;
+.btn-outline:hover {
+  background-color: var(--primary-red);
+  color: var(--light-text);
 }
 
-.btn-accent {
-    background-color: var(--accent-color);
-    border-color: var(--accent-color);
-    color: var(--text-color);
-}
-
-.btn-accent:hover, .btn-accent:focus {
-    background-color: #EAC94A; /* Darkened yellow */
-    border-color: #EAC94A;
-}
-
-.btn-outline-primary {
-    color: var(--primary-color);
-    border-color: var(--primary-color);
-}
-
-.btn-outline-primary:hover {
-    background-color: var(--primary-color);
-    color: var(--white);
-}
-
-.btn-outline-light {
-    color: var(--white);
-    border-color: var(--white);
-}
-
-.btn-outline-light:hover {
-    color: var(--primary-color);
-    background-color: var(--white);
-}
-
-/* Hero Section */
-.hero-section {
-    position: relative;
-    height: 80vh;
-    min-height: 500px;
-    max-height: 700px;
-}
-
-.hero-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.overlay {
-    background: linear-gradient(rgba(206, 45, 45, 0.7), rgba(247, 149, 173, 0.7)) !important;
-}
-
-.hero-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    max-width: 800px;
-}
-
-/* Cards & Sections */
+/* Card styling */
 .card {
-    border-radius: 15px;
-    overflow: hidden;
-    border: 1px solid var(--border-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(206, 45, 45, 0.1);
+  transform: translateY(-5px);
 }
 
 .card-title {
-    color: var(--primary-color);
-    font-weight: 700;
+  color: var(--primary-red);
+  border-bottom: 2px solid var(--primary-pink);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
-.shadow-sm {
-    box-shadow: 0 5px 15px rgba(206, 45, 45, 0.07) !important;
-}
-
-.rounded-circle.bg-primary {
-    background-color: var(--primary-color) !important;
-    border: 3px solid var(--white);
-}
-
-.rounded-circle.bg-accent {
-    background-color: var(--accent-color) !important;
-    color: var(--text-color);
-}
-
-/* Special sections */
-.py-5 {
-    padding-top: 3rem !important;
-    padding-bottom: 3rem !important;
-}
-
-.page-header {
-    background: linear-gradient(135deg, var(--background-color) 0%, var(--white) 100%);
-    border-bottom: 1px solid var(--border-color);
-}
-
-/* Team photos */
-.team-member img {
-    border: 3px solid var(--white);
-    box-shadow: 0 5px 15px rgba(206, 45, 45, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.team-member img:hover {
-    transform: scale(1.03);
-}
-
-/* Timeline for Application Process */
-.timeline {
-    position: relative;
-}
-
-.timeline:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 2px;
-    margin-left: -1px;
-    background-color: var(--secondary-color);
-}
-
-.inner-circle {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
-    border: 2px solid var(--white);
-}
-
-/* Testimonials */
-.fa-quote-left {
-    color: var(--secondary-color) !important;
-    opacity: 0.7;
-}
-
-/* Values section with yellow accents */
-.values-card {
-    border-left: 4px solid var(--accent-color);
-}
-
-.values-icon {
-    color: var(--accent-color);
-}
-
-/* Footer */
-footer.bg-dark {
-    background: linear-gradient(135deg, var(--text-color) 0%, #4A3E40 100%) !important;
+/* Footer styling */
+footer {
+  background-color: var(--primary-red);
+  color: var(--light-text);
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: 3rem;
 }
 
 footer a {
-    transition: color 0.3s ease;
+  color: var(--soft-pink);
+  text-decoration: none;
 }
 
-footer a:hover {
-    color: var(--accent-color) !important; /* Yellow accent on hover */
-    text-decoration: none;
+/* Circle container - mimicking the logo's circular design */
+.circle-container {
+  border: 1px solid var(--primary-pink);
+  border-radius: 50%;
+  padding: 3rem;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem auto;
+  position: relative;
 }
 
-.social-icons a {
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
-    margin-right: 8px;
+/* Heart icon styling */
+.heart-icon {
+  color: var(--primary-red);
+  font-size: 2rem;
+  margin: 0.5rem;
 }
 
-.social-icons a:hover {
-    transform: translateY(-3px);
-    background-color: var(--accent-color);
-    color: var(--text-color) !important;
+.heart-pink {
+  color: var(--primary-pink);
 }
 
-/* Form Elements */
+/* Section styling */
+.section {
+  padding: 3rem 0;
+}
+
+.section-pink {
+  background-color: var(--soft-pink);
+}
+
+/* Grid layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Curved text (like in the logo) */
+.curved-text {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5rem;
+  color: var(--primary-red);
+}
+
+/* Form styling */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
 .form-control {
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--accent-gray);
+  border-radius: 4px;
+  font-family: inherit;
 }
 
 .form-control:focus {
-    border-color: var(--secondary-color);
-    box-shadow: 0 0 0 0.25rem rgba(247, 149, 173, 0.25);
+  outline: none;
+  border-color: var(--primary-pink);
+  box-shadow: 0 0 0 2px rgba(247, 160, 185, 0.25);
 }
 
-.form-label {
-    color: var(--light-text);
-    font-weight: 600;
+/* Helper classes */
+.text-center {
+  text-align: center;
 }
 
-.form-select:focus {
-    border-color: var(--secondary-color);
-    box-shadow: 0 0 0 0.25rem rgba(247, 149, 173, 0.25);
+.text-red {
+  color: var(--primary-red);
 }
 
-/* Breadcrumbs */
-.breadcrumb-item a {
-    color: var(--primary-color);
-    text-decoration: none;
+.text-pink {
+  color: var(--primary-pink);
 }
 
-.breadcrumb-item.active {
-    color: var(--light-text);
+.bg-soft-pink {
+  background-color: var(--soft-pink);
 }
 
-/* CTA Sections */
-.cta-section {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+.rounded {
+  border-radius: 8px;
 }
 
-.cta-accent {
-    border-left: 5px solid var(--accent-color);
-    padding-left: 1.5rem;
+.p-3 {
+  padding: 1.5rem;
 }
 
-/* Responsive Adjustments */
+.mb-3 {
+  margin-bottom: 1.5rem;
+}
+
+/* Media queries for responsiveness */
 @media (max-width: 768px) {
-    .hero-section {
-        height: 60vh;
-    }
-    
-    .timeline:before {
-        left: 40px;
-    }
-    
-    .display-4 {
-        font-size: 2.5rem;
-    }
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  nav li {
+    margin: 0.5rem 0;
+  }
+  
+  .circle-container {
+    width: 250px;
+    height: 250px;
+    padding: 2rem;
+  }
+}
+
+/* Animations */
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.heartbeat {
+  animation: heartbeat 1.5s infinite;
+}
+
+/* Accessibility */
+:focus {
+  outline: 3px solid var(--primary-pink);
+  outline-offset: 2px;
 }
