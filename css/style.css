@@ -1,178 +1,156 @@
-/* Care-Filled Support for Meg - Main CSS File
-   Colors extracted from logo:
-   - Light Pink Background: #FDF2F8
-   - Red Heart: #B13737
-   - Pink Heart: #E98EAC
-   - Outline/Text: #BDB4B9
-*/
+/* style.css - Theme based on the 'Care Filled Support' logo */
 
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lato:wght@400;700&display=swap');
+
+/* Define color palette using CSS variables */
 :root {
-    --primary-color: #B13737; /* Red heart - for important elements */
-    --secondary-color: #E98EAC; /* Pink heart - for highlights and accents */
-    --light-color: #FDF2F8; /* Light pink background */
-    --outline-color: #BDB4B9; /* Outline color for borders */
-    --dark-text: #333333; /* For body text - better readability */
-    --white: #ffffff;
+  --background-color: #FFF0F5; /* LavenderBlush - light pink background */
+  --primary-color: #DC143C;    /* Crimson - red heart color */
+  --secondary-color: #FF69B4; /* HotPink - pink heart color */
+  --text-color: #333333;       /* Dark grey for body text - slightly softer than pure black */
+  --heading-color: #000000;   /* Black for headings and accents */
+  --border-radius: 8px;       /* Soft rounded corners */
+  --heading-font: 'Dancing Script', cursive; /* Cursive font like the logo */
+  --body-font: 'Lato', sans-serif;          /* Clean sans-serif for readability */
 }
 
-/* Base Styles */
+/* Basic reset and body styling */
 body {
-    font-family: 'Nunito', 'Segoe UI', sans-serif;
-    color: var(--dark-text);
-    line-height: 1.6;
-    background-color: var(--light-color);
+  margin: 0;
+  padding: 20px; /* Add some padding around the content */
+  font-family: var(--body-font);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  min-height: 100vh; /* Ensure body takes full viewport height */
 }
 
-/* Typography */
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', 'Georgia', serif;
-    font-weight: 700;
+/* Container for content */
+.container {
+  background-color: #ffffff; /* White background for content area */
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  max-width: 800px; /* Limit content width */
+  width: 90%; /* Responsive width */
+  text-align: center; /* Center text within the container */
 }
 
-.script-heading {
-    font-family: 'Dancing Script', 'Brush Script MT', cursive;
-    font-weight: 600;
+/* Heading styles */
+h1, h2, h3 {
+  font-family: var(--heading-font);
+  color: var(--heading-color);
+  margin-bottom: 0.8em;
 }
 
-.text-primary {
-    color: var(--primary-color) !important;
+h1 {
+  font-size: 3em; /* Larger size for main heading */
+  color: var(--primary-color); /* Use primary red for main heading */
 }
 
-.text-secondary {
-    color: var(--secondary-color) !important;
+h2 {
+  font-size: 2.2em;
+  color: var(--secondary-color); /* Use secondary pink for subheadings */
 }
 
-.bg-primary {
-    background-color: var(--primary-color) !important;
+h3 {
+  font-size: 1.8em;
 }
 
-.bg-secondary {
-    background-color: var(--secondary-color) !important;
+/* Paragraph styles */
+p {
+  margin-bottom: 1em;
+  color: var(--text-color);
 }
 
-.bg-light {
-    background-color: var(--light-color) !important;
+/* Link styles */
+a {
+  color: var(--primary-color); /* Red links */
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-/* Buttons */
-.btn-primary {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-    color: var(--white);
+a:hover, a:focus {
+  color: var(--secondary-color); /* Pink hover effect */
+  text-decoration: underline;
 }
 
-.btn-primary:hover, .btn-primary:focus {
-    background-color: #8F2929; /* Darker red */
-    border-color: #8F2929;
+/* Button styles */
+button, .button {
+  display: inline-block;
+  font-family: var(--body-font); /* Use body font for buttons */
+  font-size: 1em;
+  font-weight: bold;
+  color: #ffffff; /* White text */
+  background-color: var(--primary-color); /* Red background */
+  border: none;
+  padding: 12px 25px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin: 10px 5px; /* Add margin around buttons */
 }
 
-.btn-secondary {
-    background-color: var(--secondary-color);
-    border-color: var(--secondary-color);
-    color: var(--white);
+button:hover, .button:hover {
+  background-color: var(--secondary-color); /* Pink hover background */
+  transform: translateY(-2px); /* Slight lift effect */
 }
 
-.btn-secondary:hover, .btn-secondary:focus {
-    background-color: #D27292; /* Darker pink */
-    border-color: #D27292;
+/* Secondary button style */
+.button-secondary {
+  background-color: var(--secondary-color); /* Pink background */
 }
 
-.btn-outline-primary {
-    color: var(--primary-color);
-    border-color: var(--primary-color);
+.button-secondary:hover {
+  background-color: var(--primary-color); /* Red hover background */
 }
 
-.btn-outline-primary:hover, .btn-outline-primary:focus {
-    background-color: var(--primary-color);
-    color: var(--white);
+/* Simple HR style */
+hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), var(--secondary-color), rgba(0, 0, 0, 0));
+  margin: 2em 0;
 }
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Care Filled Support</h1>
 
-/* Navigation */
-.navbar {
-    background-color: var(--white) !important;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
+        <h2>Supporting You Always</h2>
 
-.navbar-brand img {
-    max-height: 60px;
-}
+        <p>
+            This is a demonstration of the CSS theme inspired by the logo.
+            The colors and fonts reflect the soft and caring nature of the design.
+            Notice the <a href="#">link style</a> and how it changes on hover.
+        </p>
 
-.nav-link {
-    font-weight: 600;
-    color: var(--dark-text);
-}
+        <hr>
 
-.nav-link:hover, .nav-link.active {
-    color: var(--primary-color) !important;
-}
+        <h3>Get Involved</h3>
+        <p>
+            Learn more about how you can contribute or receive support.
+        </p>
 
-/* Cards & Shadows */
-.card {
-    border-radius: 10px;
-    overflow: hidden;
-    border-color: var(--outline-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(177, 55, 55, 0.1) !important;
-}
-
-.shadow {
-    box-shadow: 0 5px 15px rgba(177, 55, 55, 0.1) !important;
-}
-
-.border-primary {
-    border-color: var(--primary-color) !important;
-}
-
-.border-secondary {
-    border-color: var(--secondary-color) !important;
-}
-
-/* Form Elements */
-.form-control:focus {
-    border-color: var(--secondary-color);
-    box-shadow: 0 0 0 0.25rem rgba(233, 142, 172, 0.25);
-}
-
-/* Footer */
-footer {
-    background-color: var(--dark-text);
-    color: var(--white);
-}
-
-footer a {
-    color: var(--white);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-footer a:hover {
-    color: var(--secondary-color) !important;
-}
-
-/* Social Icons */
-.social-icons a {
-    transition: all 0.3s ease;
-}
-
-.social-icons a:hover {
-    transform: translateY(-3px);
-    color: var(--secondary-color) !important;
-}
-
-/* Hero Section (Additional) */
-.hero-section .overlay {
-    background: rgba(177, 55, 55, 0.7);
-}
-
-/* Special elements */
-.heart-icon {
-    color: var(--primary-color);
-}
-
-.heart-icon.pink {
-    color: var(--secondary-color);
-}
+        <div>
+            <button>Primary Action</button>
+            <button class="button-secondary">Secondary Action</button>
+            <a href="#" class="button">Learn More</a>
+        </div>
+    </div>
+</body>
+</html>
