@@ -1,275 +1,166 @@
-@@ -1,133 +1,178 @@
- /* Care-Filled Support for Meg - Main CSS File
-    Colors extracted from logo:
-    - Light Pink Background: #FDF2F8
-    - Red Heart: #B13737
-    - Pink Heart: #E98EAC
-    - Outline/Text: #BDB4B9
- */
- 
- :root {
-     --primary-red: #C23A3A;
-     --primary-pink: #E88CB7;
-     --background-light: #F9E6EF;
-     --text-dark: #2D2323;
-     --accent-black: #222;
-     --font-script: 'Dancing Script', cursive, 'Brush Script MT', cursive;
-     --font-sans: 'Quicksand', 'Helvetica Neue', Arial, sans-serif;
-     --primary-color: #B13737; /* Red heart - for important elements */
-     --secondary-color: #E98EAC; /* Pink heart - for highlights and accents */
-     --light-color: #FDF2F8; /* Light pink background */
-     --outline-color: #BDB4B9; /* Outline color for borders */
-     --dark-text: #333333; /* For body text - better readability */
-     --white: #ffffff;
- }
- 
- /* Base Styles */
- body {
-     background: var(--background-light);
-     color: var(--text-dark);
-     font-family: var(--font-sans);
-     margin: 0;
-     padding: 0;
-     font-family: 'Nunito', 'Segoe UI', sans-serif;
-     color: var(--dark-text);
-     line-height: 1.6;
-     background-color: var(--light-color);
- }
- 
- header, .navbar {
-     background: var(--background-light);
-     border-bottom: 1px solid #f3cdd7;
- /* Typography */
- h1, h2, h3, h4, h5, h6 {
-     font-family: 'Playfair Display', 'Georgia', serif;
-     font-weight: 700;
- }
- 
- .navbar-brand img {
-     height: 60px;
- .script-heading {
-     font-family: 'Dancing Script', 'Brush Script MT', cursive;
-     font-weight: 600;
- }
- 
- .text-primary {
-     color: var(--primary-color) !important;
- }
- 
- .text-secondary {
-     color: var(--secondary-color) !important;
- }
- 
- .bg-primary {
-     background-color: var(--primary-color) !important;
- }
- 
- .bg-secondary {
-     background-color: var(--secondary-color) !important;
- }
- 
- h1, h2, h3, .logo-script {
-     font-family: var(--font-script);
-     color: var(--primary-red);
-     letter-spacing: 0.05em;
- .bg-light {
-     background-color: var(--light-color) !important;
- }
- 
- h1 {
-     font-size: 2.8rem;
-     margin-bottom: 0.5em;
- /* Buttons */
- .btn-primary {
-     background-color: var(--primary-color);
-     border-color: var(--primary-color);
-     color: var(--white);
- }
- 
- h2 {
-     color: var(--primary-pink);
-     font-size: 2rem;
- .btn-primary:hover, .btn-primary:focus {
-     background-color: #8F2929; /* Darker red */
-     border-color: #8F2929;
- }
- 
- .hero-section {
-     background: var(--background-light);
-     text-align: center;
-     padding: 5rem 1rem 3rem 1rem;
- .btn-secondary {
-     background-color: var(--secondary-color);
-     border-color: var(--secondary-color);
-     color: var(--white);
- }
- 
- .hero-section .hearts {
-     display: flex;
-     justify-content: center;
-     gap: 2rem;
-     margin-bottom: 1rem;
- .btn-secondary:hover, .btn-secondary:focus {
-     background-color: #D27292; /* Darker pink */
-     border-color: #D27292;
- }
- 
- .heart {
-     width: 60px;
-     height: 60px;
-     display: inline-block;
-     background: var(--primary-red);
-     clip-path: polygon(50% 0%, 100% 35%, 80% 100%, 50% 80%, 20% 100%, 0% 35%);
- .btn-outline-primary {
-     color: var(--primary-color);
-     border-color: var(--primary-color);
- }
- 
- .heart.pink {
-     background: var(--primary-pink);
- .btn-outline-primary:hover, .btn-outline-primary:focus {
-     background-color: var(--primary-color);
-     color: var(--white);
- }
- 
- .button, .btn-primary {
-     background: var(--primary-red);
-     color: #fff;
-     border: none;
-     border-radius: 30px;
-     padding: 0.7em 2em;
-     font-family: var(--font-script);
-     font-size: 1.2rem;
-     transition: background 0.2s;
- /* Navigation */
- .navbar {
-     background-color: var(--white) !important;
-     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
- }
- 
- .button:hover, .btn-primary:hover {
-     background: var(--primary-pink);
-     color: var(--accent-black);
- .navbar-brand img {
-     max-height: 60px;
- }
- 
- .nav-link {
-     font-weight: 600;
-     color: var(--dark-text);
- }
- 
- .nav-link:hover, .nav-link.active {
-     color: var(--primary-color) !important;
- }
- 
- /* Cards & Shadows */
- .card {
-     background: #fff;
-     border-radius: 18px;
-     border: 1px solid #f3cdd7;
-     box-shadow: 0 2px 10px #e88cb740;
-     margin-bottom: 2rem;
-     border-radius: 10px;
-     overflow: hidden;
-     border-color: var(--outline-color);
-     transition: transform 0.3s ease, box-shadow 0.3s ease;
- }
- 
- .card:hover {
-     transform: translateY(-5px);
-     box-shadow: 0 10px 20px rgba(177, 55, 55, 0.1) !important;
- }
- 
- .card-title {
-     font-family: var(--font-script);
-     color: var(--primary-red);
-     font-size: 1.4rem;
- .shadow {
-     box-shadow: 0 5px 15px rgba(177, 55, 55, 0.1) !important;
- }
- 
- .card-text {
-     color: var(--text-dark);
-     font-size: 1rem;
- .border-primary {
-     border-color: var(--primary-color) !important;
- }
- 
- .border-secondary {
-     border-color: var(--secondary-color) !important;
- }
- 
- /* Form Elements */
- .form-control:focus {
-     border-color: var(--secondary-color);
-     box-shadow: 0 0 0 0.25rem rgba(233, 142, 172, 0.25);
- }
- 
- /* Footer */
- footer {
-     background: var(--background-light);
-     color: var(--primary-red);
-     text-align: center;
-     padding: 2rem 1rem;
-     border-top: 1px solid #f3cdd7;
- }
- 
- .social-links a {
-     color: var(--primary-pink);
-     margin: 0 0.7em;
-     font-size: 2rem;
-     transition: color 0.2s;
- }
- 
- .social-links a:hover {
-     color: var(--primary-red);
- }
- 
- @media (max-width: 600px) {
-     .hero-section {
-         padding: 2rem 0.5rem;
-     }
-     h1 {
-         font-size: 2rem;
-     }
-     h2 {
-         font-size: 1.3rem;
-     }
-     background-color: var(--dark-text);
-     color: var(--white);
- }
- 
- footer a {
-     color: var(--white);
-     text-decoration: none;
-     transition: color 0.3s ease;
- }
- 
- footer a:hover {
-     color: var(--secondary-color) !important;
- }
- 
- /* Social Icons */
- .social-icons a {
-     transition: all 0.3s ease;
- }
- 
- .social-icons a:hover {
-     transform: translateY(-3px);
-     color: var(--secondary-color) !important;
- }
- 
- /* Hero Section (Additional) */
- .hero-section .overlay {
-     background: rgba(177, 55, 55, 0.7);
- }
- 
- /* Special elements */
- .heart-icon {
-     color: var(--primary-color);
- }
- 
- .heart-icon.pink {
-     color: var(--secondary-color);
- }
+:root {
+    --primary-color: #CE2D2D; /* Logo red heart */
+    --secondary-color: #F795AD; /* Logo pink heart */
+    --background-color: #FFF0F5; /* Light pink */
+    --accent-color: #FDDC5C; /* Soft yellow accent */
+    --text-color: #333333;
+    --light-text: #736269;
+    --white: #fff;
+    --border-color: #EADCE0;
+}
+
+/* Base */
+body {
+    font-family: 'Nunito', 'Segoe UI', sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6, .display-4, .script-heading {
+    font-family: 'Dancing Script', cursive;
+    color: var(--primary-color);
+}
+
+.lead {
+    color: var(--light-text);
+    font-weight: 500;
+}
+
+/* Navbar */
+.navbar {
+    background: var(--white) !important;
+    box-shadow: 0 2px 10px rgba(206,45,45,0.07);
+}
+.navbar-brand img {
+    max-height: 60px;
+}
+.nav-link {
+    font-weight: 600;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+.nav-link:hover, .nav-link.active {
+    color: var(--primary-color) !important;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* Buttons */
+.btn-primary {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--white);
+}
+.btn-primary:hover {
+    background: #B82626;
+    border-color: #B82626;
+}
+.btn-secondary {
+    background: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: var(--white);
+}
+.btn-secondary:hover {
+    background: #E58199;
+    border-color: #E58199;
+}
+.btn-accent, .bg-accent {
+    background: var(--accent-color) !important;
+    color: var(--text-color) !important;
+}
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+.btn-outline-primary:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
+.btn-outline-light {
+    color: var(--white);
+    border-color: var(--white);
+}
+.btn-outline-light:hover {
+    color: var(--primary-color);
+    background: var(--white);
+}
+
+/* Hero */
+.hero-section {
+    position: relative;
+    height: 80vh;
+    min-height: 500px;
+    max-height: 700px;
+}
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.overlay {
+    background: linear-gradient(rgba(206,45,45,0.7), rgba(247,149,173,0.7));
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+}
+
+/* Cards */
+.card {
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(206,45,45,0.1);
+}
+.card-title {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+.rounded-circle.bg-primary {
+    background: var(--primary-color) !important;
+}
+.rounded-circle.bg-secondary {
+    background: var(--secondary-color) !important;
+}
+.rounded-circle.bg-accent {
+    background: var(--accent-color) !important;
+    color: var(--text-color);
+}
+
+/* Social Icons */
+.social-icons a {
+    transition: transform 0.3s, background 0.3s;
+    display: inline-block;
+    width: 40px; height: 40px; line-height: 40px;
+    text-align: center; border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    margin-right: 8px;
+}
+.social-icons a:hover {
+    transform: translateY(-3px);
+    background: var(--accent-color);
+    color: var(--text-color) !important;
+}
+
+/* Footer */
+footer.bg-dark {
+    background: linear-gradient(135deg, var(--text-color) 0%, #4A3E40 100%) !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-section { height: 60vh; }
+    .display-4 { font-size: 2.5rem; }
+}
+
+/* Forms */
+.form-control:focus, .form-select:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 0.25rem rgba(247,149,173,0.25);
+}
+.form-label {
+    color: var(--light-text);
+    font-weight: 600;
+}
