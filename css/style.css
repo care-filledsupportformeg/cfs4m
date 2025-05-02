@@ -1,133 +1,178 @@
+/* Care-Filled Support for Meg - Main CSS File
+   Colors extracted from logo:
+   - Light Pink Background: #FDF2F8
+   - Red Heart: #B13737
+   - Pink Heart: #E98EAC
+   - Outline/Text: #BDB4B9
+*/
+
 :root {
-    --primary-red: #C23A3A;
-    --primary-pink: #E88CB7;
-    --background-light: #F9E6EF;
-    --text-dark: #2D2323;
-    --accent-black: #222;
-    --font-script: 'Dancing Script', cursive, 'Brush Script MT', cursive;
-    --font-sans: 'Quicksand', 'Helvetica Neue', Arial, sans-serif;
+    --primary-color: #B13737; /* Red heart - for important elements */
+    --secondary-color: #E98EAC; /* Pink heart - for highlights and accents */
+    --light-color: #FDF2F8; /* Light pink background */
+    --outline-color: #BDB4B9; /* Outline color for borders */
+    --dark-text: #333333; /* For body text - better readability */
+    --white: #ffffff;
 }
 
+/* Base Styles */
 body {
-    background: var(--background-light);
-    color: var(--text-dark);
-    font-family: var(--font-sans);
-    margin: 0;
-    padding: 0;
+    font-family: 'Nunito', 'Segoe UI', sans-serif;
+    color: var(--dark-text);
+    line-height: 1.6;
+    background-color: var(--light-color);
 }
 
-header, .navbar {
-    background: var(--background-light);
-    border-bottom: 1px solid #f3cdd7;
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-weight: 700;
+}
+
+.script-heading {
+    font-family: 'Dancing Script', 'Brush Script MT', cursive;
+    font-weight: 600;
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.text-secondary {
+    color: var(--secondary-color) !important;
+}
+
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.bg-secondary {
+    background-color: var(--secondary-color) !important;
+}
+
+.bg-light {
+    background-color: var(--light-color) !important;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: #8F2929; /* Darker red */
+    border-color: #8F2929;
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: var(--white);
+}
+
+.btn-secondary:hover, .btn-secondary:focus {
+    background-color: #D27292; /* Darker pink */
+    border-color: #D27292;
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover, .btn-outline-primary:focus {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* Navigation */
+.navbar {
+    background-color: var(--white) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-brand img {
-    height: 60px;
+    max-height: 60px;
 }
 
-h1, h2, h3, .logo-script {
-    font-family: var(--font-script);
-    color: var(--primary-red);
-    letter-spacing: 0.05em;
+.nav-link {
+    font-weight: 600;
+    color: var(--dark-text);
 }
 
-h1 {
-    font-size: 2.8rem;
-    margin-bottom: 0.5em;
+.nav-link:hover, .nav-link.active {
+    color: var(--primary-color) !important;
 }
 
-h2 {
-    color: var(--primary-pink);
-    font-size: 2rem;
-}
-
-.hero-section {
-    background: var(--background-light);
-    text-align: center;
-    padding: 5rem 1rem 3rem 1rem;
-}
-
-.hero-section .hearts {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-bottom: 1rem;
-}
-
-.heart {
-    width: 60px;
-    height: 60px;
-    display: inline-block;
-    background: var(--primary-red);
-    clip-path: polygon(50% 0%, 100% 35%, 80% 100%, 50% 80%, 20% 100%, 0% 35%);
-}
-
-.heart.pink {
-    background: var(--primary-pink);
-}
-
-.button, .btn-primary {
-    background: var(--primary-red);
-    color: #fff;
-    border: none;
-    border-radius: 30px;
-    padding: 0.7em 2em;
-    font-family: var(--font-script);
-    font-size: 1.2rem;
-    transition: background 0.2s;
-}
-
-.button:hover, .btn-primary:hover {
-    background: var(--primary-pink);
-    color: var(--accent-black);
-}
-
+/* Cards & Shadows */
 .card {
-    background: #fff;
-    border-radius: 18px;
-    border: 1px solid #f3cdd7;
-    box-shadow: 0 2px 10px #e88cb740;
-    margin-bottom: 2rem;
+    border-radius: 10px;
+    overflow: hidden;
+    border-color: var(--outline-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card-title {
-    font-family: var(--font-script);
-    color: var(--primary-red);
-    font-size: 1.4rem;
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(177, 55, 55, 0.1) !important;
 }
 
-.card-text {
-    color: var(--text-dark);
-    font-size: 1rem;
+.shadow {
+    box-shadow: 0 5px 15px rgba(177, 55, 55, 0.1) !important;
 }
 
+.border-primary {
+    border-color: var(--primary-color) !important;
+}
+
+.border-secondary {
+    border-color: var(--secondary-color) !important;
+}
+
+/* Form Elements */
+.form-control:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 0.25rem rgba(233, 142, 172, 0.25);
+}
+
+/* Footer */
 footer {
-    background: var(--background-light);
-    color: var(--primary-red);
-    text-align: center;
-    padding: 2rem 1rem;
-    border-top: 1px solid #f3cdd7;
+    background-color: var(--dark-text);
+    color: var(--white);
 }
 
-.social-links a {
-    color: var(--primary-pink);
-    margin: 0 0.7em;
-    font-size: 2rem;
-    transition: color 0.2s;
+footer a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-.social-links a:hover {
-    color: var(--primary-red);
+footer a:hover {
+    color: var(--secondary-color) !important;
 }
 
-@media (max-width: 600px) {
-    .hero-section {
-        padding: 2rem 0.5rem;
-    }
-    h1 {
-        font-size: 2rem;
-    }
-    h2 {
-        font-size: 1.3rem;
-    }
+/* Social Icons */
+.social-icons a {
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: translateY(-3px);
+    color: var(--secondary-color) !important;
+}
+
+/* Hero Section (Additional) */
+.hero-section .overlay {
+    background: rgba(177, 55, 55, 0.7);
+}
+
+/* Special elements */
+.heart-icon {
+    color: var(--primary-color);
+}
+
+.heart-icon.pink {
+    color: var(--secondary-color);
 }
